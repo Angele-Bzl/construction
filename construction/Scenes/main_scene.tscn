@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6sedyukr0b27" path="res://Assets/Placeholders/placeholder_wall.png" id="3_iacmt"]
 [ext_resource type="PackedScene" uid="uid://cfubmk7s40qls" path="res://Prefabs/CrossbowPrefabs/crossbow.tscn" id="4_x6ack"]
 [ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="5_iacmt"]
+[ext_resource type="PackedScene" uid="uid://ct3oijw5r6wfs" path="res://Prefabs/BlockPrefabs/nexus.tscn" id="6_6ev3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(20, 720)
@@ -82,3 +83,6 @@ position = Vector2(688, 216)
 
 [node name="Block3" parent="." unique_id=1760648103 instance=ExtResource("5_iacmt")]
 position = Vector2(712, 152)
+
+[node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
+position = Vector2(640, 96)
