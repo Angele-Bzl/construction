@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfubmk7s40qls"]
+
+[ext_resource type="Texture2D" uid="uid://dgkkss4ygfnes" path="res://Assets/Placeholders/placeholder_crossbow.png" id="1_djkrp"]
+[ext_resource type="Script" uid="uid://btc6k3tepywsc" path="res://Scripts/crossbow.gd" id="1_paq6x"]
+
+[node name="Crossbow" type="Node2D" unique_id=641207508]
+script = ExtResource("1_paq6x")
+
+[node name="CrossbowSprite" type="Sprite2D" parent="." unique_id=15286217]
+position = Vector2(0, -8)
+texture = ExtResource("1_djkrp")
+
+[node name="BulletSpawn" type="Node2D" parent="CrossbowSprite" unique_id=743754746]
+position = Vector2(0, -40)
