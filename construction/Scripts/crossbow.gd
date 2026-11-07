@@ -36,6 +36,7 @@ func charging():
 	texture_progress_bar.value = charge
 	if charge > 3: 
 		texture_progress_bar.self_modulate = Color("E93C3Cff")
+
 func shoot():
 	if Input.is_action_just_released("scroll_down"):
 		charging()
