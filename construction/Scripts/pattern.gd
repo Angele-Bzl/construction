@@ -29,6 +29,9 @@ func _process(delta):
 		else:
 			for block in get_blocks():
 				block.switch_color_filter(true,false)
+		
+		if Input.is_action_just_pressed("snap"):
+			snap_to_ground()
 
 func get_blocks() -> Array[Block]:
 	var blocks : Array[Block]
@@ -40,12 +43,12 @@ func get_blocks() -> Array[Block]:
 func activate_blocks():
 	for block in get_blocks():
 		block.switch_collision_activation(true)
-		block.switch_color_filter(true)
+		block.switch_color_filter(false)
 
 func desactivate_blocks():
 	for block in get_blocks():
 		block.switch_collision_activation(false)
-		block.switch_color_filter(false)
+		block.switch_color_filter(true)
 
 func select():
 	is_selected = true
@@ -65,3 +68,5 @@ func can_snap() -> bool:
 func snap_to_ground():
 	if can_snap():
 		deselect()
+	else:
+		print("Can't snap pattern here !")

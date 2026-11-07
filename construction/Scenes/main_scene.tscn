@@ -80,6 +80,7 @@ position = Vector2(640, 673)
 texture = ExtResource("5_maf8m")
 
 [node name="Crossbow" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
+z_index = 1
 position = Vector2(641, 676)
 
 [node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
@@ -97,4 +98,3 @@ position = Vector2(688, 240)
 position = Vector2(640, 96)
 
 [node name="Pattern" parent="." unique_id=103748082 instance=ExtResource("7_maf8m")]
-is_selected = true
