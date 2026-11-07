@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://btth67ioelhyt"]
 
+[ext_resource type="Script" uid="uid://cbviq4mekeqap" path="res://Scripts/hud.gd" id="1_lepgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrivr"]
+
 [node name="HUD" type="Control" unique_id=1297925502]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +11,65 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lepgj")
+
+[node name="AttackerInfoPanel" type="PanelContainer" parent="." unique_id=1818927736]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AttackerInfoPanel" unique_id=616113445]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=1272251892]
+layout_mode = 2
+text = "Attacker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=430032050]
+layout_mode = 2
+text = "Score : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NbPallets" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=44460291]
+layout_mode = 2
+text = "Pallets : 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefenderInfoPanel" type="PanelContainer" parent="." unique_id=521957862]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DefenderInfoPanel" unique_id=1688296836]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=617266229]
+layout_mode = 2
+text = "Defender"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=409573406]
+layout_mode = 2
+text = "Time left : 0 sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextBlockText" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=36057050]
+layout_mode = 2
+text = "Next Block"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextblockImage" type="TextureRect" parent="DefenderInfoPanel/VBoxContainer" unique_id=975438562]
+layout_mode = 2
