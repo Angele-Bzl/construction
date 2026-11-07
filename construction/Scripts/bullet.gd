@@ -26,8 +26,11 @@ func _physics_process(delta):
 		#si la bullet a tapé X fois, elle retourne dans le stock
 		if life_point == 0:
 			go_back_to_stock()
-	#if Input.is_action_just_pressed("left_click"):
-	#	go_back_to_stock()
+
+func _on_bullet_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			go_back_to_stock()
 
 func go_back_to_stock():
 	queue_free()
