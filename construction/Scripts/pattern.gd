@@ -68,5 +68,6 @@ func can_snap() -> bool:
 func snap_to_ground():
 	if can_snap():
 		deselect()
+		Defender.pattern_snapped.emit()
 	else:
 		print("Can't snap pattern here !")

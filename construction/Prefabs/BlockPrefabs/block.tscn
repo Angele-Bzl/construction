@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bbd2ymjpgamm0" path="res://Scripts/block.gd" id="1_mppv7"]
 [ext_resource type="Texture2D" uid="uid://evwt1q6ctoj1" path="res://Assets/Items/Brick.png" id="2_mppv7"]
+[ext_resource type="Texture2D" uid="uid://doyb4b1ot8cno" path="res://Assets/Items/Brick top.png" id="3_4xu17"]
+[ext_resource type="Texture2D" uid="uid://cbuotl3u3jdii" path="res://Assets/Items/drop shadow block.png" id="4_83mfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(31, 31)
@@ -16,11 +18,24 @@ max_contacts_reported = 8
 script = ExtResource("1_mppv7")
 
 [node name="BlockSprite" type="Sprite2D" parent="." unique_id=1034150835]
+z_index = 2
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 scale = Vector2(0.285, 0.285)
 texture = ExtResource("2_mppv7")
 centered = false
 offset = Vector2(-59.64, -111.71)
+
+[node name="Brick TOP" type="Sprite2D" parent="BlockSprite" unique_id=1836335206]
+z_index = 3
+texture = ExtResource("3_4xu17")
+centered = false
+offset = Vector2(-69.51, -191.69)
+
+[node name="Drop Shadow" type="Sprite2D" parent="BlockSprite" unique_id=2073492646]
+z_index = -1
+texture = ExtResource("4_83mfk")
+centered = false
+offset = Vector2(-59.45, 50.205)
 
 [node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=41598474]
 shape = SubResource("RectangleShape2D_xrivr")
@@ -28,6 +43,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 [node name="BlockDetection" type="Area2D" parent="." unique_id=1880383099]
 
 [node name="BlockDetectionCollision" type="CollisionShape2D" parent="BlockDetection" unique_id=1666127460]
+z_index = 2
 shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="ColorFilter" type="ColorRect" parent="." unique_id=2114929470]
