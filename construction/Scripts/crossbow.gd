@@ -9,6 +9,9 @@ class_name Crossbow
 
 @export var charge : float = 0.1
 
+#---- Slider charge ----
+@onready var texture_progress_bar: TextureProgressBar = $CrossbowSprite/CrossbowCannonSprite/Sprite2D/TextureProgressBar
+
 @onready var bullet_spawn = $CrossbowSprite/CrossbowCannonSprite/BulletSpawn
 
 func _process(delta):
@@ -29,7 +32,10 @@ func charging():
 	if charge > 4:
 		charge = 4
 	print("charge +0.5. = ", charge)
-		
+	
+	texture_progress_bar.value = charge
+	if charge > 3: 
+		texture_progress_bar.self_modulate = Color("E93C3Cff")
 func shoot():
 	if Input.is_action_just_released("scroll_down"):
 		charging()
@@ -43,4 +49,6 @@ func shoot():
 		new_bullet.global_position = bullet_spawn.global_position
 		new_bullet.set_bullet_velocity(angle_to_mouse, charge)
 		charge = 0
+		texture_progress_bar.value = 0
+		texture_progress_bar.self_modulate = Color.WHITE
 		Attacker.stock -= 1
