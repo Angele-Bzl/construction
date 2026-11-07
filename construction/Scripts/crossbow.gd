@@ -6,7 +6,6 @@ class_name Crossbow
 @export var rotation_speed :float = 2.0
 @onready var shoot_timer = $ShootCooldown
 @export var shoot_cooldown : float = 2.0
-@export var stock : int = 6
 
 @export var charge : float = 0.1
 
@@ -34,7 +33,7 @@ func charging():
 func shoot():
 	if Input.is_action_just_released("scroll_down"):
 		charging()
-	if shoot_timer.is_stopped() && Input.is_action_just_pressed("left_click") && stock > 0 && charge > 3:
+	if shoot_timer.is_stopped() && Input.is_action_just_pressed("left_click") && Attacker.stock > 0 && charge > 3:
 		shoot_timer.start(shoot_cooldown)
 		var mouse_position = get_global_mouse_position()
 		var angle_to_mouse = global_position.direction_to(mouse_position)
@@ -44,5 +43,4 @@ func shoot():
 		new_bullet.global_position = bullet_spawn.global_position
 		new_bullet.set_bullet_velocity(angle_to_mouse, charge)
 		charge = 0
-		stock -= 1
-	
+		Attacker.stock -= 1

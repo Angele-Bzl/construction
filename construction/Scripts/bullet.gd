@@ -22,10 +22,16 @@ func _physics_process(delta):
 				if collider.velocity < velocity:
 					collider.velocity = velocity
 		velocity = velocity.bounce(collision_info.get_normal()) * velocity_loss
-		#si la bullet a tapé X fois, elle se détruit
 		life_point -= 1
+		#si la bullet a tapé X fois, elle retourne dans le stock
 		if life_point == 0:
-			queue_free()
+			go_back_to_stock()
+	if Input.is_action_just_pressed("left_click"):
+		go_back_to_stock()
+
+func go_back_to_stock():
+	queue_free()
+	Attacker.stock += 1
 
 func set_bullet_velocity(angle : Vector2, charge : float):
 	velocity = angle * base_speed * charge
