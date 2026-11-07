@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bkh7r7psrars"]
+
+[ext_resource type="PackedScene" uid="uid://du6bvr3c87on8" path="res://Prefabs/BlockPrefabs/PatternPrefabs/pattern.tscn" id="1_wpsym"]
+
+[node name="Pattern3" unique_id=103748082 instance=ExtResource("1_wpsym")]
+
+[node name="Block3" parent="." index="2" unique_id=502402122]
+position = Vector2(48, 48)
