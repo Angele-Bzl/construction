@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfubmk7s40qls" path="res://Prefabs/CrossbowPrefabs/crossbow.tscn" id="4_x6ack"]
 [ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="5_iacmt"]
 [ext_resource type="PackedScene" uid="uid://ct3oijw5r6wfs" path="res://Prefabs/BlockPrefabs/nexus.tscn" id="6_6ev3c"]
+[ext_resource type="PackedScene" uid="uid://du6bvr3c87on8" path="res://Prefabs/BlockPrefabs/PatternPrefabs/pattern.tscn" id="7_maf8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(20, 720)
@@ -89,3 +90,6 @@ position = Vector2(688, 240)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 position = Vector2(640, 96)
+
+[node name="Pattern" parent="." unique_id=103748082 instance=ExtResource("7_maf8m")]
+is_selected = true

@@ -27,9 +27,18 @@ func _integrate_forces(state):
 				take_damage(collider)
 
 
+func switch_collision_activation(b : bool):
+	if b:
+		collision_layer = 1
+		collision_mask = 1
+	else:
+		collision_layer = 0
+		collision_mask = 0
+
 func take_damage(bullet : Bullet):
-	print("aie")
 	current_hp -= bullet.damage
+
+
 
 func die():
 	queue_free()
