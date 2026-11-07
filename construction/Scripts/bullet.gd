@@ -4,7 +4,7 @@ class_name Bullet
 @export var base_speed : float = 300.0
 @export var damage : float = 1.0
 @export var velocity_loss : float = 0.8
-@export var life_point : int = 10
+@export var life_point : int = 20
 
 func _physics_process(delta):
 	var collision_info = move_and_collide((velocity * delta))
