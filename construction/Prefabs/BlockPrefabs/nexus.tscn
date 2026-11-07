@@ -7,6 +7,20 @@
 max_hp = 20.0
 
 [node name="BlockSprite" parent="." index="0" unique_id=1034150835]
-position = Vector2(2.842171e-14, -15.999998)
 scale = Vector2(0.5333333, 0.5333333)
 texture = ExtResource("2_gqxav")
+centered = true
+offset = Vector2(0, 0)
+
+[node name="BlockTop" parent="BlockSprite" index="0" unique_id=1836335206]
+visible = false
+
+[node name="Drop Shadow" parent="BlockSprite" index="1" unique_id=2073492646]
+position = Vector2(0, 30.505)
+scale = Vector2(0.455, 0.455)
+
+[node name="BlockCollision" parent="." index="1" unique_id=41598474]
+scale = Vector2(0.89, 1.81)
+
+[node name="BlockDetectionCollision" parent="BlockDetection" parent_id_path=PackedInt32Array(1880383099) index="0" unique_id=1666127460]
+scale = Vector2(0.86, 1.745)

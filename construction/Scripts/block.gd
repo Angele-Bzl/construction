@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name Block
 
 @onready var block_sprite = $BlockSprite
+@onready var block_top = $BlockSprite/BlockTop
 @onready var filter = $ColorFilter
 @onready var block_detection = $BlockDetection
 
@@ -12,6 +13,7 @@ var current_hp : float = max_hp:
 		current_hp = value
 		var ratio = value/max_hp
 		block_sprite.self_modulate = Color(1,ratio,ratio)
+		block_top.self_modulate = Color(1,ratio,ratio)
 		if current_hp <= 0.0:
 			die()
 signal is_collided(bullet : Bullet)
