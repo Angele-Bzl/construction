@@ -16,6 +16,7 @@ size = Vector2(432, 20)
 [node name="MainScene" type="Node2D" unique_id=533807947]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2005764036]
+visible = false
 scale = Vector2(7.5739646, 6.6666665)
 texture = ExtResource("1_jv6wh")
 centered = false
@@ -75,14 +76,16 @@ shape = SubResource("RectangleShape2D_13qdw")
 [node name="Crossbow" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
 position = Vector2(640, 712)
 
-[node name="Block" parent="." unique_id=434419004 instance=ExtResource("5_iacmt")]
-position = Vector2(552, 184)
+[node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
 
-[node name="Block2" parent="." unique_id=1879454218 instance=ExtResource("5_iacmt")]
-position = Vector2(688, 216)
+[node name="Block" parent="BlockContainer" unique_id=434419004 instance=ExtResource("5_iacmt")]
+position = Vector2(592, 208)
 
-[node name="Block3" parent="." unique_id=1760648103 instance=ExtResource("5_iacmt")]
-position = Vector2(712, 152)
+[node name="Block2" parent="BlockContainer" unique_id=1879454218 instance=ExtResource("5_iacmt")]
+position = Vector2(688, 176)
+
+[node name="Block3" parent="BlockContainer" unique_id=1760648103 instance=ExtResource("5_iacmt")]
+position = Vector2(688, 240)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 position = Vector2(640, 96)
