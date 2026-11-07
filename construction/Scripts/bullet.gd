@@ -18,5 +18,5 @@ func _physics_process(delta):
 		
 		velocity = velocity.bounce(collision_info.get_normal())
 
-func set_bullet_velocity(angle : Vector2):
-	velocity = angle * base_speed
+func set_bullet_velocity(angle : Vector2, charge : float):
+	velocity = angle * base_speed * charge
