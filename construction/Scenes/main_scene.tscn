@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://80njmbwc6ram" path="res://Assets/Placeholders/placeholder_background.png" id="1_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://mgubiq2qcmbv" path="res://Assets/Placeholders/placeholder_ground.png" id="2_x6ack"]
 [ext_resource type="Texture2D" uid="uid://b6sedyukr0b27" path="res://Assets/Placeholders/placeholder_wall.png" id="3_iacmt"]
+[ext_resource type="PackedScene" uid="uid://cfubmk7s40qls" path="res://Prefabs/CrossbowPrefabs/crossbow.tscn" id="4_x6ack"]
+[ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="5_iacmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(20, 720)
@@ -68,3 +70,15 @@ texture = ExtResource("3_iacmt")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall4" unique_id=216096089]
 shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Crossbow" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
+position = Vector2(640, 712)
+
+[node name="Block" parent="." unique_id=434419004 instance=ExtResource("5_iacmt")]
+position = Vector2(552, 184)
+
+[node name="Block2" parent="." unique_id=1879454218 instance=ExtResource("5_iacmt")]
+position = Vector2(688, 216)
+
+[node name="Block3" parent="." unique_id=1760648103 instance=ExtResource("5_iacmt")]
+position = Vector2(712, 152)

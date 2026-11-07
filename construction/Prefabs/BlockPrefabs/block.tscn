@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dmm0qqj4gh5up"]
+
+[ext_resource type="Script" uid="uid://bbd2ymjpgamm0" path="res://Scripts/block.gd" id="1_mppv7"]
+[ext_resource type="Texture2D" uid="uid://c2i0bc1wqm1uv" path="res://Assets/Placeholders/placeholder_bloc.jpg" id="1_rkrg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(32, 32)
+
+[node name="Block" type="StaticBody2D" unique_id=434419004]
+script = ExtResource("1_mppv7")
+
+[node name="BlockSprite" type="Sprite2D" parent="." unique_id=1034150835]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.17297296, 0.17297296)
+texture = ExtResource("1_rkrg0")
+
+[node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=41598474]
+shape = SubResource("RectangleShape2D_xrivr")
