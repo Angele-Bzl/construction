@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://dmm0qqj4gh5up"]
 
 [ext_resource type="Script" uid="uid://bbd2ymjpgamm0" path="res://Scripts/block.gd" id="1_mppv7"]
-[ext_resource type="Texture2D" uid="uid://c2i0bc1wqm1uv" path="res://Assets/Placeholders/placeholder_bloc.jpg" id="1_rkrg0"]
+[ext_resource type="Texture2D" uid="uid://evwt1q6ctoj1" path="res://Assets/Items/Brick.png" id="2_mppv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(32, 32)
 
 [node name="Block" type="RigidBody2D" unique_id=407422604]
@@ -14,10 +17,22 @@ script = ExtResource("1_mppv7")
 
 [node name="BlockSprite" type="Sprite2D" parent="." unique_id=1034150835]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
-scale = Vector2(0.17297296, 0.17297296)
-texture = ExtResource("1_rkrg0")
+scale = Vector2(0.293, 0.293)
+texture = ExtResource("2_mppv7")
 
 [node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=41598474]
 shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="BlockDetection" type="Area2D" parent="." unique_id=1880383099]
+
+[node name="BlockDetectionCollision" type="CollisionShape2D" parent="BlockDetection" unique_id=1666127460]
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="ColorFilter" type="ColorRect" parent="." unique_id=2114929470]
+visible = false
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

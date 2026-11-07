@@ -6,16 +6,15 @@ class_name Crossbow
 @export var rotation_speed :float = 2.0
 @onready var shoot_timer = $ShootCooldown
 @export var shoot_cooldown : float = 2.0
+@export var stock : int = 6
 
-var is_loaded : bool = false
+@export var charge : float = 0.1
 
 @onready var bullet_spawn = $CrossbowSprite/CrossbowCannonSprite/BulletSpawn
 
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("right_click"):
 		shoot()
-	if Input.is_action_just_released("scroll_down"):
-		reload()
 
 func _physics_process(delta):
 	rotate_with_mouse_position(delta)
@@ -26,15 +25,16 @@ func rotate_with_mouse_position(delta : float = 0.2):
 	
 	rotation = move_toward(rotation, angle_to_mouse, delta * rotation_speed)
 	
-func reload():
-	is_loaded = true
-	print("reloaded.")
+func charging():
+	charge += 0.1
+	if charge > 4:
+		charge = 4
+	print("charge +0.5. = ", charge)
 		
-	
-
 func shoot():
-	print("shooting...")
-	if shoot_timer.is_stopped() && is_loaded == true && Input.is_action_pressed("bow"):
+	if Input.is_action_just_released("scroll_down"):
+		charging()
+	if shoot_timer.is_stopped() && Input.is_action_just_pressed("left_click") && stock > 0 && charge > 3:
 		shoot_timer.start(shoot_cooldown)
 		var mouse_position = get_global_mouse_position()
 		var angle_to_mouse = global_position.direction_to(mouse_position)
@@ -42,6 +42,7 @@ func shoot():
 		var new_bullet : Bullet = bullet.instantiate()
 		get_tree().current_scene.add_child(new_bullet)
 		new_bullet.global_position = bullet_spawn.global_position
-		new_bullet.set_bullet_velocity(angle_to_mouse)
-		is_loaded = false
-		print("shot.")
+		new_bullet.set_bullet_velocity(angle_to_mouse, charge)
+		charge = 0
+		stock -= 1
+	
