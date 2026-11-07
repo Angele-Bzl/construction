@@ -17,8 +17,10 @@ script = ExtResource("1_mppv7")
 
 [node name="BlockSprite" type="Sprite2D" parent="." unique_id=1034150835]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
-scale = Vector2(0.293, 0.293)
+scale = Vector2(0.285, 0.285)
 texture = ExtResource("2_mppv7")
+centered = false
+offset = Vector2(-59.64, -111.71)
 
 [node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=41598474]
 shape = SubResource("RectangleShape2D_xrivr")
