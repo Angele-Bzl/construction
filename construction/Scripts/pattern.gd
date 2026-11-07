@@ -5,10 +5,8 @@ var is_selected = false:
 	set(value):
 		is_selected = value
 		if value:
-			desactivate_blocks()
 			z_index = 10
 		else:
-			activate_blocks()
 			z_index = 0
 
 func _ready():
@@ -24,6 +22,13 @@ func _process(delta):
 			global_position.y -= GlobalManager.TILE.y
 		if Input.is_action_just_pressed("down"):
 			global_position.y += GlobalManager.TILE.y
+		
+		if can_snap():
+			for block in get_blocks():
+				block.switch_color_filter(true,true)
+		else:
+			for block in get_blocks():
+				block.switch_color_filter(true,false)
 
 func get_blocks() -> Array[Block]:
 	var blocks : Array[Block]
@@ -35,17 +40,28 @@ func get_blocks() -> Array[Block]:
 func activate_blocks():
 	for block in get_blocks():
 		block.switch_collision_activation(true)
+		block.switch_color_filter(true)
 
 func desactivate_blocks():
 	for block in get_blocks():
 		block.switch_collision_activation(false)
+		block.switch_color_filter(false)
 
 func select():
 	is_selected = true
+	desactivate_blocks()
+
+func deselect():
+	is_selected = false
+	activate_blocks()
 
 func can_snap() -> bool:
-	return true
+	var tamp : bool = true
+	for block in get_blocks():
+		if !block.can_snap():
+			tamp = false
+	return tamp
 
 func snap_to_ground():
 	if can_snap():
-		is_selected = false
+		deselect()

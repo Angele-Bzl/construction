@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://evwt1q6ctoj1" path="res://Assets/Items/Brick.png" id="2_mppv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(32, 32)
+size = Vector2(31, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(32, 32)
@@ -34,5 +34,6 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
+color = Color(1, 1, 1, 0.5058824)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
