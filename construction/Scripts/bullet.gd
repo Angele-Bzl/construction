@@ -4,6 +4,7 @@ class_name Bullet
 @export var base_speed : float = 300.0
 @export var damage : float = 1.0
 @export var velocity_loss : float = 0.8
+@export var life_point : int = 10
 
 func _physics_process(delta):
 	var collision_info = move_and_collide((velocity * delta))
@@ -16,10 +17,15 @@ func _physics_process(delta):
 			#si c'est un block, on lui dit de gérer ses collisions de son côté, avec la balle en paramètre
 			if collider is Block:
 				collider.is_collided.emit(self)
+			#si c'est une bullet, elle donne sa velocité et peut donc la reaccélerer
 			if collider is Bullet:
 				if collider.velocity < velocity:
 					collider.velocity = velocity
 		velocity = velocity.bounce(collision_info.get_normal()) * velocity_loss
+		#si la bullet a tapé X fois, elle se détruit
+		life_point -= 1
+		if life_point == 0:
+			queue_free()
 
 func set_bullet_velocity(angle : Vector2, charge : float):
 	velocity = angle * base_speed * charge
