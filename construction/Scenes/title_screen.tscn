@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://cpdlsp1yo4v5f"]
+
+[ext_resource type="Script" uid="uid://ccdrp6pajjfxy" path="res://Scripts/title_screen.gd" id="1_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://6b06wr0m4phh" path="res://Assets/Placeholders/Conneries Charles/Frame cacaca.png" id="1_p3fck"]
+[ext_resource type="Texture2D" uid="uid://b60tbjrusq0eh" path="res://Assets/Placeholders/Conneries Charles/Group 45.png" id="2_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://c0tmahdce6q3p" path="res://Assets/Placeholders/Conneries Charles/Clavier.png" id="4_55kwv"]
+[ext_resource type="Texture2D" uid="uid://bvjmuxklp77qj" path="res://Assets/Placeholders/Conneries Charles/Group 24.png" id="5_12m1t"]
+
+[node name="TitleScreen" type="Control" unique_id=493476337]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4gxqj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1511773214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p3fck")
+expand_mode = 2
+
+[node name="TSMain" type="Control" parent="." unique_id=583017140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TSMain" unique_id=942797339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.92156863)
+
+[node name="MarginContainer" type="MarginContainer" parent="TSMain" unique_id=999936103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 119
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TSMain/MarginContainer" unique_id=581736851]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=478745663]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 49
+text = "Amazing Untitled Game "
+
+[node name="TextureRect" type="TextureRect" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=682338445]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_4gxqj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=658375166]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="StartGameButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1942655691]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "START GAME"
+
+[node name="HowToPlayButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1422349549]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "HOW TO PLAY"
+
+[node name="OptionButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1152118977]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "OPTION"
+
+[node name="CreditsButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=577436562]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1536067376]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
+
+[node name="TSHowToPlay" type="Control" parent="." unique_id=1590816908]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TSHowToPlay" unique_id=714506152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.92156863)
+
+[node name="MarginContainer" type="MarginContainer" parent="TSHowToPlay" unique_id=630269378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 119
+theme_override_constants/margin_bottom = 50
+
+[node name="HowToPLayLabel" type="Label" parent="TSHowToPlay/MarginContainer" unique_id=148823182]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 49
+text = "How to play"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TSHowToPlay/MarginContainer" unique_id=353625588]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TSHowToPlay/MarginContainer/HBoxContainer" unique_id=1435400814]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=859073064]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Defender"
+
+[node name="TextureRect" type="TextureRect" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=411076947]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_55kwv")
+
+[node name="Label2" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2131909329]
+layout_mode = 2
+text = "Protect your Nexus from the attacker 
+bullets to win."
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1955587297]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=38337817]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label3" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1406425727]
+layout_mode = 2
+text = "Move blocs: WASD"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1198006028]
+layout_mode = 2
+text = "Pivote blocs: QE"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=268035641]
+layout_mode = 2
+text = "Validate blocs position: Enter"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="TSHowToPlay/MarginContainer/HBoxContainer" unique_id=568791932]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TSHowToPlay/MarginContainer/HBoxContainer" unique_id=1606157881]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=34070281]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Attacker"
+
+[node name="TextureRect" type="TextureRect" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2039527682]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_12m1t")
+
+[node name="Label2" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2087664453]
+layout_mode = 2
+text = "Use your crossbow to Destroyer the defender
+Nexus to win."
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1309113849]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1329083934]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label3" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1501535896]
+layout_mode = 2
+text = "(Re)load: Mouse wheel"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=238789168]
+layout_mode = 2
+text = "Bow: Right button"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="TSHowToPlay/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1405064344]
+layout_mode = 2
+text = "Release: Left button"
+horizontal_alignment = 1
+
+[node name="HTPQuitButton" type="Button" parent="TSHowToPlay/MarginContainer" unique_id=187629224]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 24
+text = "CLOSE"
