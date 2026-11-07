@@ -2,11 +2,20 @@ extends CharacterBody2D
 class_name Bullet
 
 @export var base_speed : float = 300.0
+@export var damage : float = 1.0
 
 func _physics_process(delta):
 	var collision_info = move_and_collide((velocity * delta))
 	if collision_info:
-		print(collision_info)
+		#on récupère le node qui est entré en collision
+		var collider = collision_info.get_collider()
+		
+		if collider:
+			print(str(collider.name) + " : je suis touché par " + str(name))
+			#si c'est un block, on lui dit de gérer ses collisions de son côté, avec la balle en paramètre
+			if collider is Block:
+				collider.is_collided.emit(self)
+		
 		velocity = velocity.bounce(collision_info.get_normal())
 
 func set_bullet_velocity(angle : Vector2):
