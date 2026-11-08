@@ -63,8 +63,12 @@ func generate_starting_elements(starting_blocks : int):
 		print(i)
 		if nexus.global_position.x < ground.global_position.x + GlobalManager.TILE.x * 2 - int(ground.global_position.x) % int(GlobalManager.TILE.x*2) and i < 0:
 			print("Collé à gauche")
+		elif nexus.global_position.x < ground.global_position.x + GlobalManager.TILE.x * 3 - int(ground.global_position.x) % int(GlobalManager.TILE.x*2) and i < -1:
+			print("Un peu collé à gauche")
 		elif nexus.global_position.x > ground.global_position.x + ground.size.x - GlobalManager.TILE.x * 2 - int(ground.global_position.x) % int(GlobalManager.TILE.x*2) and i > 1:
 			print("Collé à droite")
+		elif nexus.global_position.x > ground.global_position.x + ground.size.x - GlobalManager.TILE.x * 3 - int(ground.global_position.x) % int(GlobalManager.TILE.x*2) and i > 2:
+			print("Un peu collé à droite")
 		else:
 			for j in pos_around_nexus:
 				if nexus.global_position.y <= ground.global_position.y - int(ground.global_position.y) % int(GlobalManager.TILE.y*2) and j < 0:
