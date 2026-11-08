@@ -1,7 +1,7 @@
 extends Control
 
-@onready var winner_label = $Structure/WinnerLabel
-@onready var time_left_score_left = $Structure/TimeLeftScoreLeft
+@onready var winner_label = $VBoxContainer/WinnerLabel
+@onready var time_left_score_left = $VBoxContainer/TimeLeftScoreLeft
 
 func _ready():
 	GlobalManager.end_game.connect(show_end_label)
