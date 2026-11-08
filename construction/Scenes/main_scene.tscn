@@ -51,11 +51,10 @@ offset_left = 288.0
 offset_top = 16.0
 offset_right = 934.5995
 offset_bottom = 684.8
-scale = Vector2(1.0887729, 1.0526316)
 mouse_filter = 2
 texture = ExtResource("7_76v2p")
 expand_mode = 1
-stretch_mode = 1
+stretch_mode = 2
 
 [node name="Walls" type="Node2D" parent="." unique_id=1550099786]
 
@@ -105,7 +104,6 @@ texture = ExtResource("3_iacmt")
 shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
-ruin_texture = null
 
 [node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
 

@@ -9,13 +9,13 @@ script = ExtResource("1_n1af2")
 pattern_img = ExtResource("2_5xven")
 
 [node name="Block" parent="." unique_id=407422604 instance=ExtResource("1_fxuyb")]
-position = Vector2(16, 32)
+position = Vector2(16, 16)
 
 [node name="Block2" parent="." unique_id=1292690081 instance=ExtResource("1_fxuyb")]
-position = Vector2(48, 32)
+position = Vector2(48, 16)
 
 [node name="Block3" parent="." unique_id=502402122 instance=ExtResource("1_fxuyb")]
-position = Vector2(80, 32)
+position = Vector2(80, 16)
 
 [node name="Block4" parent="." unique_id=1347714736 instance=ExtResource("1_fxuyb")]
-position = Vector2(16, 64)
+position = Vector2(16, 48)

@@ -7,4 +7,4 @@
 pattern_img = ExtResource("2_sd6il")
 
 [node name="Block3" parent="." index="2" unique_id=502402122]
-position = Vector2(48, 64)
+position = Vector2(48, 48)

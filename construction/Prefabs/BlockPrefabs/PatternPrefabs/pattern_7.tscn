@@ -7,7 +7,7 @@
 pattern_img = ExtResource("2_mucfk")
 
 [node name="Block2" parent="." index="1" unique_id=1292690081]
-position = Vector2(16, 128)
+position = Vector2(16, 112)
 
 [node name="Block3" parent="." index="2" unique_id=502402122]
-position = Vector2(16, 96)
+position = Vector2(16, 80)
