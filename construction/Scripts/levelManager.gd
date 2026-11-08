@@ -6,6 +6,7 @@ extends Node2D
 var patterns : Array[PackedScene]
 
 func _ready():
+	
 	Defender.pattern_snapped.connect(generate_new_pattern)
 	
 	_get_pattern_files()
