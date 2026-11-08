@@ -47,10 +47,20 @@ scale = Vector2(7.5739646, 6.6666665)
 texture = ExtResource("1_jv6wh")
 centered = false
 
+[node name="Ground2" type="TextureRect" parent="." unique_id=822002542]
+offset_left = -200.0
+offset_top = -56.0
+offset_right = 1624.0
+offset_bottom = 968.0
+mouse_filter = 2
+texture = ExtResource("7_76v2p")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="Ground" type="TextureRect" parent="." unique_id=1142738223]
 offset_left = 288.0
 offset_top = 16.0
-offset_right = 934.5995
+offset_right = 992.0
 offset_bottom = 684.8
 mouse_filter = 2
 texture = ExtResource("7_76v2p")
@@ -98,7 +108,7 @@ position = Vector2(648, 752)
 [node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
 
 [node name="PatternSpawn" type="Node2D" parent="." unique_id=828033140]
-position = Vector2(440, 16)
+position = Vector2(576, 208)
 
 [node name="CrossbowShooter" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
 z_index = 1

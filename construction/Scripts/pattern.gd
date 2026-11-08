@@ -2,6 +2,7 @@ extends Node2D
 class_name Pattern
 
 @export var pattern_img : CompressedTexture2D
+@onready var movement_cooldown = $MovementCooldown
 
 var is_selected = false:
 	set(value):
@@ -15,15 +16,19 @@ func _ready():
 	select()
 
 func _process(delta):
-	if is_selected:
-		if Input.is_action_just_pressed("left"):
+	if is_selected and movement_cooldown.is_stopped():
+		if Input.is_action_pressed("left"):
 			global_position.x -= GlobalManager.TILE.x
-		if Input.is_action_just_pressed("right"):
+			movement_cooldown.start(0.08)
+		if Input.is_action_pressed("right"):
 			global_position.x += GlobalManager.TILE.x
-		if Input.is_action_just_pressed("up"):
+			movement_cooldown.start(0.08)
+		if Input.is_action_pressed("up"):
 			global_position.y -= GlobalManager.TILE.y
-		if Input.is_action_just_pressed("down"):
+			movement_cooldown.start(0.08)
+		if Input.is_action_pressed("down"):
 			global_position.y += GlobalManager.TILE.y
+			movement_cooldown.start(0.08)
 		
 		if can_snap():
 			for block in get_blocks():

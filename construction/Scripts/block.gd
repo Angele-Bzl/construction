@@ -40,8 +40,8 @@ func take_damage(bullet : Bullet):
 
 func update_visual():
 	var hp_ratio : float = current_hp/max_hp
-	block_sprite.self_modulate = Color(1,hp_ratio,hp_ratio)
-	block_top.self_modulate = Color(1,hp_ratio,hp_ratio)
+	#block_sprite.self_modulate = Color(1,hp_ratio,hp_ratio)
+	#block_top.self_modulate = Color(1,hp_ratio,hp_ratio)
 	if textures.size() == top_textures.size():
 		for i in range(0,textures.size()-1):
 			var ratio : float = float(i)/float(textures.size())
