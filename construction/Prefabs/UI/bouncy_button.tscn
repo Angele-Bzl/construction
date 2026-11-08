@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cd7co44yvugtn"]
+
+[ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="1_tsldl"]
+
+[node name="BouncyButton" type="Button" unique_id=477566380]
+offset_right = 56.0
+offset_bottom = 24.0
+text = "Text"
+script = ExtResource("1_tsldl")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
