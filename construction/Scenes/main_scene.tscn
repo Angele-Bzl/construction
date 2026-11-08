@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cfm157hsvuylg" path="res://Assets/Items/Background.png" id="7_76v2p"]
 [ext_resource type="PackedScene" uid="uid://c4n6e1rual5es" path="res://Prefabs/WorldPrefabs/barrier.tscn" id="9_drdnd"]
 [ext_resource type="Texture2D" uid="uid://1s2b4tljtric" path="res://Assets/Items/base_mountain.png" id="9_ioaeq"]
+[ext_resource type="Texture2D" uid="uid://3vwtpiiy2v2v" path="res://Assets/Items/leaf_sprite_sheet.png" id="13_ioaeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
 size = Vector2(14, 720)
@@ -21,6 +22,33 @@ size = Vector2(14, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(768, 14)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_drdnd"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rfvy8"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-186.71, -59.7, 0)
+emission_shape_scale = Vector3(1, 0.875, 1)
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+inherit_velocity_ratio = 0.294
+direction = Vector3(10, 1, 1.41)
+spread = 10.735
+initial_velocity_min = 3.0
+initial_velocity_max = 12.0
+angular_velocity_min = 8.729983
+angular_velocity_max = 95.459984
+use_rotation_velocity_3d = true
+rotation_velocity_3d_min = Vector3(0, 25, 25)
+rotation_velocity_3d_max = Vector3(0, 25, 25)
+gravity = Vector3(25, 10, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+anim_offset_max = 1.0
 
 [node name="MainScene" type="Node2D" unique_id=533807947]
 script = ExtResource("1_m1efj")
@@ -117,3 +145,15 @@ position = Vector2(641, 676)
 [node name="CrossbowBase" type="Sprite2D" parent="." unique_id=918904373]
 position = Vector2(640, 673)
 texture = ExtResource("5_maf8m")
+
+[node name="Leaf Particles Generator" type="GPUParticles2D" parent="." unique_id=1589817667]
+z_index = 8
+material = SubResource("CanvasItemMaterial_drdnd")
+position = Vector2(641, 361)
+scale = Vector2(3.48, 3.48)
+amount = 56
+texture = ExtResource("13_ioaeq")
+lifetime = 37.199999999999996
+speed_scale = 0.8
+randomness = 0.45
+process_material = SubResource("ParticleProcessMaterial_rfvy8")

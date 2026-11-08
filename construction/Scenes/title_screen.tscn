@@ -11,6 +11,34 @@
 [ext_resource type="Theme" uid="uid://qds6je0imcnu" path="res://Ressources/Themes/button.tres" id="6_sqelc"]
 [ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="8_8mikk"]
 [ext_resource type="Texture2D" uid="uid://dk7rr4je5r8vt" path="res://Assets/UI/Credits/Credits.png" id="10_8mikk"]
+[ext_resource type="Texture2D" uid="uid://3vwtpiiy2v2v" path="res://Assets/Items/leaf_sprite_sheet.png" id="12_w5sh6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o1e67"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ycay6"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-32.755, 17.63, 0)
+emission_shape_scale = Vector3(-0.085, 0.875, 1)
+emission_shape = 3
+emission_box_extents = Vector3(100, 100.88, 1)
+inherit_velocity_ratio = 0.294
+direction = Vector3(10, 1, 1.41)
+spread = 10.735
+initial_velocity_min = 3.0
+initial_velocity_max = 12.0
+angular_velocity_min = 8.729983
+angular_velocity_max = 95.459984
+use_rotation_velocity_3d = true
+rotation_velocity_3d_min = Vector3(0, 25, 25)
+rotation_velocity_3d_max = Vector3(0, 25, 25)
+gravity = Vector3(25, 10, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+anim_offset_max = 1.0
 
 [node name="TitleScreen" type="Control" unique_id=493476337]
 layout_mode = 3
@@ -310,6 +338,18 @@ offset_bottom = 720.0
 texture = ExtResource("10_8mikk")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Leaf Particles Generator" type="GPUParticles2D" parent="." unique_id=348763208]
+z_index = 8
+material = SubResource("CanvasItemMaterial_o1e67")
+position = Vector2(641, 361)
+scale = Vector2(25.545, -3.645)
+amount = 56
+texture = ExtResource("12_w5sh6")
+lifetime = 37.199999999999996
+speed_scale = 0.8
+randomness = 0.45
+process_material = SubResource("ParticleProcessMaterial_ycay6")
 
 [connection signal="mouse_entered" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_exited"]
