@@ -6,6 +6,9 @@ class_name Crossbow
 @export var rotation_speed :float = 2.0
 @onready var shoot_timer = $ShootCooldown
 @export var shoot_cooldown : float = 2.0
+@onready var anim_canon_trembling = $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Trembling
+@onready var anim_canon_charged= $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Charged
+@onready var aim_assist_image = $CrossbowSprite/CrossbowCannonSprite/AimAssistImage
 
 @export var charge : float = 0.1
 
@@ -17,6 +20,8 @@ class_name Crossbow
 func _process(delta):
 	if Input.is_action_pressed("right_click"):
 		shoot()
+	else:
+		aim_assist_image.visible = false
 
 func _physics_process(delta):
 	rotate_with_mouse_position(delta)
@@ -35,7 +40,13 @@ func charging():
 	
 	texture_progress_bar.value = charge
 	if charge > 3: 
+		aim_assist_image.visible = true
+		aim_assist_image.size.y = 50.0 + 200.0 * (charge - 3.0)
 		texture_progress_bar.self_modulate = Color("E93C3Cff")
+		
+		anim_canon_trembling.play("Trembling")
+		anim_canon_charged.play("Charged")
+		
 
 func shoot():
 	if Input.is_action_just_released("scroll_down"):
@@ -49,6 +60,8 @@ func shoot():
 		get_tree().current_scene.add_child(new_bullet)
 		new_bullet.global_position = bullet_spawn.global_position
 		new_bullet.set_bullet_velocity(angle_to_mouse, charge)
+		anim_canon_trembling.play("RESET")
+		anim_canon_charged.play("RESET")
 		charge = 0
 		texture_progress_bar.value = 0
 		texture_progress_bar.self_modulate = Color.WHITE

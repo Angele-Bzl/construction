@@ -5,6 +5,8 @@ extends Node2D
 
 var patterns : Array[PackedScene]
 
+var next_pattern : PackedScene
+
 func _ready():
 	
 	Defender.pattern_snapped.connect(generate_new_pattern)
@@ -13,6 +15,7 @@ func _ready():
 	
 	await get_tree().process_frame
 	
+	next_pattern = patterns.pick_random()
 	generate_new_pattern()
 	
 	GlobalManager.start_game_timer()
@@ -38,8 +41,10 @@ func _get_pattern_files():
 	print(patterns)
 
 func generate_new_pattern():
-	if !patterns.is_empty():
-		var new_pattern : Pattern = patterns.pick_random().instantiate()
+	if next_pattern:
+		var new_pattern : Pattern = next_pattern.instantiate()
 		new_pattern.global_position = pattern_spawn.global_position
 		block_container.add_child(new_pattern)
 		new_pattern.select()
+	if !patterns.is_empty():
+		next_pattern = patterns.pick_random()
