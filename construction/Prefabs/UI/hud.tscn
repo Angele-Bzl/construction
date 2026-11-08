@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbviq4mekeqap" path="res://Scripts/hud.gd" id="1_lepgj"]
 [ext_resource type="Theme" uid="uid://b1kroheh33iy1" path="res://Ressources/Theme/Text_White.tres" id="2_ofty5"]
+[ext_resource type="Texture2D" uid="uid://0r5p2ixjru55" path="res://Assets/UI/Line/LineWhite.png" id="3_odjyi"]
 [ext_resource type="Theme" uid="uid://cryo43wrhp7pi" path="res://Ressources/Theme/Text_Black.tres" id="3_omdad"]
 [ext_resource type="FontFile" uid="uid://db2vau7f70g2p" path="res://Assets/UI/Font/Bungee-Regular.ttf" id="4_isbnw"]
 [ext_resource type="Texture2D" uid="uid://44e4rw3cjhsv" path="res://Assets/UI/Patterns/pattern2.png" id="4_y0o8b"]
@@ -59,10 +60,17 @@ text = "DEFENDER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=822583762]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_odjyi")
+
 [node name="MarginInfoDefender" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=1185839962]
 layout_mode = 2
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="PanelDefender" type="PanelContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender" unique_id=613869626]
 custom_minimum_size = Vector2(200, 180)
@@ -96,12 +104,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture = ExtResource("4_y0o8b")
 
-[node name="VBoxPV" type="VBoxContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=374169498]
+[node name="MarginContainer" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=1034472974]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxPV" type="VBoxContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginContainer" unique_id=374169498]
 layout_mode = 2
 size_flags_vertical = 0
 alignment = 1
 
-[node name="PVTitle" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV" unique_id=2040147289]
+[node name="PVTitle" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginContainer/VBoxPV" unique_id=2040147289]
 layout_mode = 2
 theme = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 30
@@ -109,7 +122,7 @@ text = "PV Nexus :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PVNumber" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV" unique_id=2076311160]
+[node name="PVNumber" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginContainer/VBoxPV" unique_id=2076311160]
 layout_mode = 2
 theme = ExtResource("2_ofty5")
 theme_override_fonts/font = ExtResource("4_isbnw")
@@ -118,10 +131,17 @@ text = "18/20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect2" type="TextureRect" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=730710903]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_odjyi")
+
 [node name="HelpDefender" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=1324524417]
 layout_mode = 2
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxHelpDefender" type="VBoxContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/HelpDefender" unique_id=468914432]
 custom_minimum_size = Vector2(0, 150)
@@ -177,10 +197,17 @@ text = "ATTACKER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=2050383763]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_odjyi")
+
 [node name="MarginInfoAttacker" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=2014307333]
 layout_mode = 2
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="PanelAttacker" type="PanelContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker" unique_id=274918343]
 custom_minimum_size = Vector2(200, 180)
@@ -217,12 +244,17 @@ text = "5/6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxTimer" type="VBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=534461161]
+[node name="MarginContainer" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=1407391276]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxTimer" type="VBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginContainer" unique_id=534461161]
 layout_mode = 2
 size_flags_vertical = 0
 alignment = 1
 
-[node name="TimerTitle" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer" unique_id=1768081873]
+[node name="TimerTitle" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginContainer/VBoxTimer" unique_id=1768081873]
 layout_mode = 2
 theme = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 30
@@ -230,7 +262,7 @@ text = "Time left :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer" unique_id=1855367984]
+[node name="Timer" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginContainer/VBoxTimer" unique_id=1855367984]
 layout_mode = 2
 theme = ExtResource("2_ofty5")
 theme_override_fonts/font = ExtResource("4_isbnw")
@@ -239,10 +271,17 @@ text = "00:59"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect2" type="TextureRect" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=1370007336]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_odjyi")
+
 [node name="HelpAttacker" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=677714740]
 layout_mode = 2
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxHelpAttacker" type="HBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker" unique_id=1300330517]
 layout_mode = 2

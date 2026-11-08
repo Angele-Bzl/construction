@@ -3,8 +3,39 @@
 [ext_resource type="Script" uid="uid://ccdrp6pajjfxy" path="res://Scripts/title_screen.gd" id="1_4gxqj"]
 [ext_resource type="Texture2D" uid="uid://6b06wr0m4phh" path="res://Assets/Placeholders/Conneries Charles/Frame cacaca.png" id="1_p3fck"]
 [ext_resource type="Texture2D" uid="uid://b60tbjrusq0eh" path="res://Assets/Placeholders/Conneries Charles/Group 45.png" id="2_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://b2hatc4sh0e3l" path="res://Assets/UI/Line/LineDark.png" id="3_0061g"]
+[ext_resource type="FontFile" uid="uid://c56qldv5b0dxm" path="res://Assets/UI/Font/CinzelDecorative-Black.ttf" id="3_n82rj"]
+[ext_resource type="Texture2D" uid="uid://dtcawao75tib" path="res://Assets/UI/Button/White.png" id="4_6vd4x"]
 [ext_resource type="Texture2D" uid="uid://c0tmahdce6q3p" path="res://Assets/Placeholders/Conneries Charles/Clavier.png" id="4_55kwv"]
 [ext_resource type="Texture2D" uid="uid://bvjmuxklp77qj" path="res://Assets/Placeholders/Conneries Charles/Group 24.png" id="5_12m1t"]
+[ext_resource type="Texture2D" uid="uid://dah6rbcykum5n" path="res://Assets/UI/Button/Dark.png" id="5_n82rj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55kwv"]
+texture = ExtResource("4_6vd4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o21p"]
+texture = ExtResource("5_n82rj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywufg"]
+texture = ExtResource("5_n82rj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mikk"]
+texture = ExtResource("4_6vd4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqelc"]
+texture = ExtResource("5_n82rj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5sh6"]
+texture = ExtResource("5_n82rj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vd4x"]
+texture = ExtResource("4_6vd4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n82rj"]
+texture = ExtResource("5_n82rj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0061g"]
+texture = ExtResource("5_n82rj")
 
 [node name="TitleScreen" type="Control" unique_id=493476337]
 layout_mode = 3
@@ -40,7 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.92156863)
+color = Color(0.9882353, 0.70980394, 0.29411766, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="TSMain" unique_id=999936103]
 layout_mode = 1
@@ -58,45 +89,76 @@ theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TSMain/MarginContainer" unique_id=581736851]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 40
+
+[node name="TextureRect3" type="TextureRect" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=785870312]
+custom_minimum_size = Vector2(600, 0)
+custom_maximum_size = Vector2(600, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_0061g")
 
 [node name="Label" type="Label" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=478745663]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 49
-text = "Amazing Untitled Game "
+theme_override_colors/font_color = Color(0.14117648, 0.050980393, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_n82rj")
+theme_override_font_sizes/font_size = 64
+text = "The Last Tower"
+
+[node name="TextureRect2" type="TextureRect" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=148503931]
+custom_minimum_size = Vector2(600, 0)
+custom_maximum_size = Vector2(600, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_0061g")
 
 [node name="TextureRect" type="TextureRect" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=682338445]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_4gxqj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TSMain/MarginContainer/VBoxContainer2" unique_id=658375166]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 10
 
 [node name="StartGameButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1942655691]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_55kwv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8o21p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ywufg")
 text = "START GAME"
 
 [node name="StartTestLevelButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=966193743]
+visible = false
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "START TEST LEVEL"
 
 [node name="HowToPlayButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1422349549]
+visible = false
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "HOW TO PLAY"
 
 [node name="OptionButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1152118977]
+visible = false
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -104,16 +166,31 @@ disabled = true
 text = "OPTION"
 
 [node name="CreditsButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=577436562]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
 theme_override_font_sizes/font_size = 24
-disabled = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_8mikk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sqelc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w5sh6")
 text = "CREDITS"
 
 [node name="QuitButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1536067376]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
+theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vd4x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n82rj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0061g")
 text = "QUIT"
 
 [node name="TSHowToPlay" type="Control" parent="." unique_id=1590816908]
