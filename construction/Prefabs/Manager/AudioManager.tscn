@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmwkjocf7oc0e" path="res://Scripts/Manager/audio_manager.gd" id="1_5um5d"]
 [ext_resource type="AudioStream" uid="uid://85nkiw0jjvtt" path="res://Sounds/Music/Master of the Feast.mp3" id="2_ole3w"]
 [ext_resource type="AudioStream" uid="uid://d28uybm7mblfh" path="res://Sounds/SFX/bump.wav" id="2_tir4x"]
+[ext_resource type="AudioStream" uid="uid://iednvtwyj8fb" path="res://Sounds/Music/Folk Round.mp3" id="3_pno7i"]
 [ext_resource type="AudioStream" uid="uid://5tijld72pc8w" path="res://Sounds/SFX/plop.wav" id="3_wonal"]
 [ext_resource type="AudioStream" uid="uid://7rtrf7jryvhu" path="res://Sounds/SFX/click.wav" id="4_soxdg"]
 [ext_resource type="AudioStream" uid="uid://wt2gofjaengm" path="res://Sounds/SFX/bomb_fuse.wav" id="5_bmuej"]
@@ -15,6 +16,10 @@ script = ExtResource("1_5um5d")
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="Music" unique_id=1328438860]
 stream = ExtResource("2_ole3w")
+bus = &"Music"
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="Music" unique_id=1037060905]
+stream = ExtResource("3_pno7i")
 bus = &"Music"
 
 [node name="SFX" type="Node" parent="." unique_id=2124410299]
