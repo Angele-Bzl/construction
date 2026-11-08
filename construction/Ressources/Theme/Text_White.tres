@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b1kroheh33iy1"]
+
+[ext_resource type="FontFile" uid="uid://cqkorgrekwq1g" path="res://Assets/UI/Font/SpaceGrotesk-Bold.ttf" id="1_x0iqx"]
+
+[resource]
+default_font = ExtResource("1_x0iqx")
+Label/colors/font_color = Color(0.9490196, 0.8745098, 0.78039217, 1)
+Label/fonts/font = ExtResource("1_x0iqx")

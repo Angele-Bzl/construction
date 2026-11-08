@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://btth67ioelhyt"]
 
 [ext_resource type="Script" uid="uid://cbviq4mekeqap" path="res://Scripts/hud.gd" id="1_lepgj"]
+[ext_resource type="Theme" uid="uid://b1kroheh33iy1" path="res://Ressources/Theme/Text_White.tres" id="2_ofty5"]
+[ext_resource type="Theme" uid="uid://cryo43wrhp7pi" path="res://Ressources/Theme/Text_Black.tres" id="3_omdad"]
+[ext_resource type="FontFile" uid="uid://db2vau7f70g2p" path="res://Assets/UI/Font/Bungee-Regular.ttf" id="4_isbnw"]
+[ext_resource type="Texture2D" uid="uid://44e4rw3cjhsv" path="res://Assets/UI/Patterns/pattern2.png" id="4_y0o8b"]
+[ext_resource type="Texture2D" uid="uid://dqjbsdfkmmifv" path="res://Assets/UI/Help/Clavier.png" id="6_p2dku"]
+[ext_resource type="Texture2D" uid="uid://b5qlu8w1jgdsa" path="res://Assets/UI/Help/Souris1.png" id="7_odjyi"]
+[ext_resource type="Texture2D" uid="uid://c3ct2t02r5p5m" path="res://Assets/UI/Help/Souris2.png" id="8_nshva"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrivr"]
+[sub_resource type="Theme" id="Theme_oh2ji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bsgg"]
+bg_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ysr6"]
+bg_color = Color(0.9490196, 0.8901961, 0.7764706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="HUD" type="Control" unique_id=1297925502]
 z_index = 20
@@ -12,65 +29,268 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_oh2ji")
 script = ExtResource("1_lepgj")
 
-[node name="AttackerInfoPanel" type="PanelContainer" parent="." unique_id=1818927736]
-layout_mode = 0
-offset_right = 112.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AttackerInfoPanel" unique_id=616113445]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=1272251892]
-layout_mode = 2
-text = "Attacker"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Score" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=430032050]
-layout_mode = 2
-text = "Score : 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NbPallets" type="Label" parent="AttackerInfoPanel/VBoxContainer" unique_id=44460291]
-layout_mode = 2
-text = "Pallets : 50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="DefenderInfoPanel" type="PanelContainer" parent="." unique_id=521957862]
+[node name="PanelDefender" type="PanelContainer" parent="." unique_id=1881136469]
+custom_minimum_size = Vector2(310, 720)
+custom_maximum_size = Vector2(310, 720)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -112.0
-offset_bottom = 96.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xrivr")
+offset_right = 310.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bsgg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DefenderInfoPanel" unique_id=1688296836]
+[node name="MarginDefender" type="MarginContainer" parent="PanelDefender" unique_id=140108007]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="DefenderInfoPanel" type="VBoxContainer" parent="PanelDefender/MarginDefender" unique_id=466217913]
+propagate_maximum_size = false
 layout_mode = 2
 
-[node name="Title" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=617266229]
+[node name="DefenderTitle" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=617266229]
 layout_mode = 2
-text = "Defender"
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 32
+text = "DEFENDER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=409573406]
+[node name="MarginInfoDefender" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=1185839962]
 layout_mode = 2
-text = "Time left : 0 sec"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="NextBlockText" type="Label" parent="DefenderInfoPanel/VBoxContainer" unique_id=36057050]
+[node name="PanelDefender" type="PanelContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender" unique_id=613869626]
+custom_minimum_size = Vector2(200, 180)
+custom_maximum_size = Vector2(300, 180)
+propagate_maximum_size = false
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ysr6")
+
+[node name="MarginPanelDefender" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender/PanelDefender" unique_id=907540010]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="NextBlock" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender/PanelDefender/MarginPanelDefender" unique_id=995012330]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_omdad")
+theme_override_font_sizes/font_size = 20
 text = "Next Block"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextblockImage" type="TextureRect" parent="DefenderInfoPanel/VBoxContainer" unique_id=975438562]
+[node name="TextureNextBlock" type="TextureRect" parent="PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender/PanelDefender/MarginPanelDefender" unique_id=1142785709]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_y0o8b")
+
+[node name="VBoxPV" type="VBoxContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=374169498]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="PVTitle" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV" unique_id=2040147289]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 30
+text = "PV Nexus :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PVNumber" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV" unique_id=2076311160]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_fonts/font = ExtResource("4_isbnw")
+theme_override_font_sizes/font_size = 48
+text = "18/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpDefender" type="MarginContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel" unique_id=1324524417]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxHelpDefender" type="VBoxContainer" parent="PanelDefender/MarginDefender/DefenderInfoPanel/HelpDefender" unique_id=468914432]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Help_Title" type="Label" parent="PanelDefender/MarginDefender/DefenderInfoPanel/HelpDefender/VBoxHelpDefender" unique_id=606968633]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 30
+text = "Placer des murs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureHelp" type="TextureRect" parent="PanelDefender/MarginDefender/DefenderInfoPanel/HelpDefender/VBoxHelpDefender" unique_id=1084755365]
+custom_minimum_size = Vector2(200, 100)
+custom_maximum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("6_p2dku")
+stretch_mode = 5
+
+[node name="PanelAttacker" type="PanelContainer" parent="." unique_id=1282201895]
+custom_minimum_size = Vector2(310, 720)
+custom_maximum_size = Vector2(310, 720)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -310.0
+offset_bottom = 720.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bsgg")
+
+[node name="MarginAttacker" type="MarginContainer" parent="PanelAttacker" unique_id=1463767462]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="AttackerInfoPanel" type="VBoxContainer" parent="PanelAttacker/MarginAttacker" unique_id=1683107483]
+propagate_maximum_size = false
+layout_mode = 2
+
+[node name="AttackerTitle" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=236195468]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 32
+text = "ATTACKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginInfoAttacker" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=2014307333]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelAttacker" type="PanelContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker" unique_id=274918343]
+custom_minimum_size = Vector2(200, 180)
+custom_maximum_size = Vector2(300, 180)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ysr6")
+
+[node name="MarginPanelAttacker" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker/PanelAttacker" unique_id=1774129436]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="AttackTitle" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker/PanelAttacker/MarginPanelAttacker" unique_id=8901736]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_omdad")
+theme_override_font_sizes/font_size = 20
+text = "Available Ammunition"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberAttack" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker/PanelAttacker/MarginPanelAttacker" unique_id=661247837]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_omdad")
+theme_override_fonts/font = ExtResource("4_isbnw")
+theme_override_font_sizes/font_size = 48
+text = "5/6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxTimer" type="VBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=534461161]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="TimerTitle" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer" unique_id=1768081873]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 30
+text = "Time left :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer" unique_id=1855367984]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_fonts/font = ExtResource("4_isbnw")
+theme_override_font_sizes/font_size = 48
+text = "00:59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpAttacker" type="MarginContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel" unique_id=677714740]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxHelpAttacker" type="HBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker" unique_id=1300330517]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxAttacker1" type="VBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker" unique_id=460688652]
+custom_minimum_size = Vector2(120, 150)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Help_Title1" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker/VBoxAttacker1" unique_id=162620021]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 30
+text = "Load"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureHelp1" type="TextureRect" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker/VBoxAttacker1" unique_id=438015186]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("7_odjyi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxAttacker2" type="VBoxContainer" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker" unique_id=279171908]
+custom_minimum_size = Vector2(120, 150)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Help_Title2" type="Label" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker/VBoxAttacker2" unique_id=1026050006]
+layout_mode = 2
+theme = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 30
+text = "Shoot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureHelp2" type="TextureRect" parent="PanelAttacker/MarginAttacker/AttackerInfoPanel/HelpAttacker/HBoxHelpAttacker/VBoxAttacker2" unique_id=1287683292]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("8_nshva")
+stretch_mode = 5

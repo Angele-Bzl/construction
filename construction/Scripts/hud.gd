@@ -1,10 +1,10 @@
 extends Control
 
-@onready var nexus_hp_label = $AttackerInfoPanel/VBoxContainer/Score
-@onready var nb_pallets_label = $AttackerInfoPanel/VBoxContainer/NbPallets
+@onready var nexus_hp_label = $PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV/PVNumber
+@onready var nb_pallets_label = $PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker/PanelAttacker/MarginPanelAttacker/NumberAttack
 
-@onready var timer_label = $DefenderInfoPanel/VBoxContainer/Timer
-@onready var nextblock_image = $DefenderInfoPanel/VBoxContainer/NextblockImage
+@onready var timer_label = $PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer/Timer
+@onready var nextblock_image = $PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender/PanelDefender/MarginPanelDefender/TextureNextBlock
 
 var tamp_nexus_hp : float
 var tamp_pallets : int
