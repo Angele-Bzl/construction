@@ -6,9 +6,14 @@
 
 [node name="Nexus" unique_id=407422604 instance=ExtResource("1_yw6gb")]
 script = ExtResource("2_8h317")
+LEFT_DEFENDER_ZONE = 450
+RIGHT_DEFENDER_ZONE = 864
+TOP_DEFENDER_ZONE = 32
+HALF_DEFENDER_ZONE = 256
 
 [node name="BlockSprite" parent="." index="0" unique_id=1034150835]
-scale = Vector2(0.5333333, 0.5333333)
+position = Vector2(14, -28)
+scale = Vector2(0.5333333, 0.52834886)
 texture = ExtResource("2_gqxav")
 centered = true
 offset = Vector2(0, 0)
@@ -21,7 +26,12 @@ position = Vector2(0, 30.505)
 scale = Vector2(0.455, 0.455)
 
 [node name="BlockCollision" parent="." index="1" unique_id=41598474]
+position = Vector2(14.000008, -28.000004)
 scale = Vector2(0.89, 1.81)
 
-[node name="BlockDetectionCollision" parent="BlockDetection" parent_id_path=PackedInt32Array(1880383099) index="0" unique_id=1666127460]
+[node name="BlockDetection" parent="." index="2" unique_id=1880383099]
+position = Vector2(14, -20)
+
+[node name="BlockDetectionCollision" parent="BlockDetection" index="0" unique_id=1666127460]
+position = Vector2(-7.6293945e-06, -7.9999943)
 scale = Vector2(0.86, 1.745)
