@@ -60,7 +60,6 @@ script = ExtResource("2_mai8y")
 
 [node name="EndScreen" parent="." unique_id=355343183 instance=ExtResource("3_76v2p")]
 visible = false
-custom_minimum_size = Vector2(1280, 720)
 offset_right = 1280.0
 offset_bottom = 720.0
 
@@ -123,13 +122,13 @@ texture = ExtResource("9_ioaeq")
 shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="Barrier" parent="." unique_id=820234278 instance=ExtResource("9_drdnd")]
-position = Vector2(448, 688)
+position = Vector2(440, 688)
 
 [node name="Barrier2" parent="." unique_id=213392050 instance=ExtResource("9_drdnd")]
-position = Vector2(832, 688)
+position = Vector2(840, 688)
 
 [node name="Barrier3" parent="." unique_id=854050089 instance=ExtResource("9_drdnd")]
-position = Vector2(648, 752)
+position = Vector2(648, 744)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 
@@ -153,7 +152,7 @@ position = Vector2(641, 361)
 scale = Vector2(3.48, 3.48)
 amount = 56
 texture = ExtResource("13_ioaeq")
-lifetime = 37.199999999999996
+lifetime = 37.2
 speed_scale = 0.8
 randomness = 0.45
 process_material = SubResource("ParticleProcessMaterial_rfvy8")
