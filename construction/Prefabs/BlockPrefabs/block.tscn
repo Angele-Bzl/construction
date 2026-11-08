@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbuotl3u3jdii" path="res://Assets/Items/drop shadow block.png" id="4_83mfk"]
 [ext_resource type="Texture2D" uid="uid://c4esbcd4r2j34" path="res://Assets/Items/Brick top dmg2.png" id="5_50g0k"]
 [ext_resource type="Texture2D" uid="uid://b7ystat3qjb4c" path="res://Assets/Items/Brick top dmg1.png" id="6_xrj2c"]
+[ext_resource type="Texture2D" uid="uid://bcho8brawggwj" path="res://Assets/Items/Stones.png" id="8_ha7bv"]
 
 [sub_resource type="Animation" id="Animation_83mfk"]
 resource_name = "Impact"
@@ -27,7 +28,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_d7qm1"]
 resource_name = "Impact_nexus"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -118,5 +119,10 @@ offset_top = -32.0
 offset_right = 16.0
 offset_bottom = 16.0
 color = Color(1, 1, 1, 0.5058824)
+
+[node name="RuinSprite" type="Sprite2D" parent="." unique_id=402614586]
+visible = false
+scale = Vector2(0.3018868, 0.29090908)
+texture = ExtResource("8_ha7bv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

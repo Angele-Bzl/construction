@@ -6,6 +6,7 @@ class_name Block
 @onready var filter = $ColorFilter
 @onready var block_detection = $BlockDetection
 @onready var impact_animation = $BlockSprite/AnimationPlayer
+@onready var ruin_sprite = $RuinSprite
 
 @export var max_hp : float = 3.0
 
@@ -43,8 +44,9 @@ func update_visual():
 	block_top.self_modulate = Color(1,hp_ratio,hp_ratio)
 	if textures.size() == top_textures.size():
 		for i in range(0,textures.size()-1):
-			var ratio : float = i/textures.size()
-			if hp_ratio >= ratio:
+			var ratio : float = float(i)/float(textures.size())
+			if hp_ratio > ratio:
+				print(ratio)
 				block_sprite.texture = textures[i]
 				block_top.texture = top_textures[i]
 
@@ -71,5 +73,22 @@ func switch_color_filter(show : bool, color : bool = true):
 		filter.modulate = Color(1,0,0)
 
 func die():
+	switch_collision_activation(false)
+	ruin_sprite.visible = true
+	ruin_sprite.modulate.a = 0
+	
+	AudioManager.block_destroyed_sfx.play()
 	GlobalManager.trigger_medium_screenshake.emit()
+	var tamp_position = block_sprite.global_position
+	var tween = create_tween()
+	tween.set_parallel()
+	tween.tween_property(block_sprite,"global_position",Vector2(tamp_position.x,tamp_position.y + 20),0.2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE)
+	#tween.tween_property(block_sprite,"scale",Vector2(1.1,1.1),0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(block_sprite,"modulate",Color(1,1,1,0),0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
+	
+	tween.tween_property(ruin_sprite,"modulate",Color(1,1,1,1),0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(ruin_sprite,"modulate",Color(1,1,1,0),4.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR).set_delay(2.0)
+	
+	await get_tree().create_timer(7.0).timeout
+	
 	queue_free()

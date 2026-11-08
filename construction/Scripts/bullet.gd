@@ -13,7 +13,6 @@ func _physics_process(delta):
 		var collider = collision_info.get_collider()
 		
 		if collider:
-			print(str(collider.name) + " : je suis touché par " + str(name))
 			#si c'est un block, on lui dit de gérer ses collisions de son côté, avec la balle en paramètre
 			if collider is Block:
 				collider.is_collided.emit(self)
