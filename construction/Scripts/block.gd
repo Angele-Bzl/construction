@@ -28,7 +28,6 @@ func _integrate_forces(state):
 		var collider = state.get_contact_collider_object(i)
 		
 		if collider:
-			print(str(name) + " : je suis touché par " + str(collider.name))
 			if collider is Bullet:
 				take_damage(collider)
 

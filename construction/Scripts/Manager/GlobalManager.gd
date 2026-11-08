@@ -26,7 +26,6 @@ func _timer_is_over():
 	end_game.emit()
 
 func start_game_timer():
-	print("heho")
 	timer.start(starting_timer)
 
 func reset_game_parameters():

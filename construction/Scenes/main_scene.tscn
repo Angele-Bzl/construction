@@ -46,6 +46,7 @@ centered = false
 offset_left = 431.0
 offset_right = 431.0
 scale = Vector2(1.0887729, 1.0526316)
+mouse_filter = 2
 texture = ExtResource("2_x6ack")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1550099786]
@@ -96,24 +97,13 @@ shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
 
-[node name="Block" parent="BlockContainer" unique_id=434419004 instance=ExtResource("5_iacmt")]
-position = Vector2(592, 208)
-
-[node name="Block2" parent="BlockContainer" unique_id=1879454218 instance=ExtResource("5_iacmt")]
-position = Vector2(688, 176)
-
-[node name="Block3" parent="BlockContainer" unique_id=1760648103 instance=ExtResource("5_iacmt")]
-position = Vector2(688, 240)
-
 [node name="PatternSpawn" type="Node2D" parent="." unique_id=828033140]
 position = Vector2(448, 32)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 position = Vector2(640, 96)
-LEFT_DEFENDER_ZONE = 450
-RIGHT_DEFENDER_ZONE = 864
-TOP_DEFENDER_ZONE = 32
-HALF_DEFENDER_ZONE = 256
+textures = Array[CompressedTexture2D]([])
+top_textures = Array[CompressedTexture2D]([])
 
 [node name="CrossbowShooter" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
 z_index = 1

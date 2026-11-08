@@ -40,7 +40,6 @@ func charging():
 	charge += 0.1
 	if charge > 4:
 		charge = 4
-	print("charge +0.5. = ", charge)
 	
 	texture_progress_bar.value = charge
 	if charge > 3: 
