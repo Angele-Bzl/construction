@@ -6,6 +6,7 @@ extends Control
 @onready var option_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/OptionButton
 @onready var credits_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton
 @onready var quit_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton
+@onready var start_test_level_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartTestLevelButton
 
 
 @onready var ts_how_to_play: Control = $TSHowToPlay
@@ -25,12 +26,17 @@ func _ready() -> void:
 		credits_button.pressed.connect(_on_credit_button_pressed)
 	if htp_quit_button:
 		htp_quit_button.pressed.connect(_on_close_button_pressed)
+	if start_test_level_button: 
+		start_test_level_button.pressed.connect(_on_test_level_button_pressed)
 	
 	ts_main.show()
 	ts_how_to_play.hide()
 
 func _on_start_game_button() -> void: 
 	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
+
+func _on_test_level_button_pressed() -> void: 
+	get_tree().change_scene_to_file("res://Scenes/test_scene.tscn")
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

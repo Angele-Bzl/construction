@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cyt0lsmws8dh7"]
+
+[ext_resource type="Script" uid="uid://dsqc6qustfk5v" path="res://Scripts/levelManager.gd" id="1_yglu3"]
+[ext_resource type="Script" uid="uid://bait0803872ov" path="res://Scripts/camera.gd" id="2_bwjpn"]
+[ext_resource type="PackedScene" uid="uid://btth67ioelhyt" path="res://Prefabs/UI/hud.tscn" id="3_ibmi3"]
+[ext_resource type="Texture2D" uid="uid://80njmbwc6ram" path="res://Assets/Placeholders/placeholder_background.png" id="4_4blnk"]
+[ext_resource type="Texture2D" uid="uid://mgubiq2qcmbv" path="res://Assets/Placeholders/placeholder_ground.png" id="5_tnimv"]
+[ext_resource type="Texture2D" uid="uid://b6sedyukr0b27" path="res://Assets/Placeholders/placeholder_wall.png" id="6_4qg1e"]
+[ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="7_040rt"]
+[ext_resource type="PackedScene" uid="uid://bucw8eyqwc758" path="res://Prefabs/BlockPrefabs/nexus_test.tscn" id="9_bwjpn"]
+[ext_resource type="PackedScene" uid="uid://cfubmk7s40qls" path="res://Prefabs/CrossbowPrefabs/crossbow.tscn" id="9_i0miu"]
+[ext_resource type="Texture2D" uid="uid://cpe6nep6cxb5l" path="res://Assets/Items/Canon base.png" id="10_6bfml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(20, 719)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(749.75, 20)
+
+[node name="MainScene" type="Node2D" unique_id=533807947]
+script = ExtResource("1_yglu3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=573347135]
+anchor_mode = 0
+script = ExtResource("2_bwjpn")
+
+[node name="HUD" parent="." unique_id=1297925502 instance=ExtResource("3_ibmi3")]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2005764036]
+visible = false
+scale = Vector2(7.5739646, 6.6666665)
+texture = ExtResource("4_4blnk")
+centered = false
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=2103564826]
+position = Vector2(264, 0)
+scale = Vector2(1.9608355, 1.0526316)
+texture = ExtResource("5_tnimv")
+centered = false
+
+[node name="Walls" type="Node2D" parent="." unique_id=1550099786]
+
+[node name="Wall1" type="StaticBody2D" parent="Walls" unique_id=1512068386]
+position = Vector2(432, 384)
+
+[node name="WallSprite" type="Sprite2D" parent="Walls/Wall1" unique_id=361679672]
+position = Vector2(-176, -23.999983)
+scale = Vector2(0.41025642, 2.6086957)
+texture = ExtResource("6_4qg1e")
+
+[node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall1" unique_id=282814252]
+position = Vector2(-178, -24.5)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=688039229]
+position = Vector2(848, 384)
+
+[node name="WallSprite" type="Sprite2D" parent="Walls/Wall2" unique_id=1120225878]
+position = Vector2(174, -23.999983)
+scale = Vector2(0.41025642, 2.6086957)
+texture = ExtResource("6_4qg1e")
+
+[node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall2" unique_id=829211651]
+position = Vector2(176, -25)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls" unique_id=197120950]
+position = Vector2(640, 8)
+
+[node name="WallSprite" type="Sprite2D" parent="Walls/Wall3" unique_id=1156021529]
+position = Vector2(-0.99997795, 0)
+scale = Vector2(19.23077, 0.05797107)
+texture = ExtResource("6_4qg1e")
+
+[node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall3" unique_id=2096315868]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="Wall4" type="StaticBody2D" parent="Walls" unique_id=208249840]
+position = Vector2(640, 712)
+
+[node name="WallSprite" type="Sprite2D" parent="Walls/Wall4" unique_id=226272177]
+position = Vector2(-0.5000188, 0)
+scale = Vector2(19.25641, 0.05797107)
+texture = ExtResource("6_4qg1e")
+
+[node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall4" unique_id=216096089]
+position = Vector2(0.125, 2)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
+
+[node name="Block" parent="BlockContainer" unique_id=434419004 instance=ExtResource("7_040rt")]
+position = Vector2(592, 208)
+
+[node name="Block2" parent="BlockContainer" unique_id=1879454218 instance=ExtResource("7_040rt")]
+position = Vector2(688, 176)
+
+[node name="Block3" parent="BlockContainer" unique_id=1760648103 instance=ExtResource("7_040rt")]
+position = Vector2(688, 240)
+
+[node name="PatternSpawn" type="Node2D" parent="." unique_id=828033140]
+position = Vector2(448, 32)
+
+[node name="Nexus2" parent="." unique_id=407422604 instance=ExtResource("9_bwjpn")]
+position = Vector2(640, 96)
+
+[node name="CrossbowShooter" parent="." unique_id=641207508 instance=ExtResource("9_i0miu")]
+z_index = 1
+position = Vector2(641, 676)
+
+[node name="CrossbowBase" type="Sprite2D" parent="." unique_id=918904373]
+position = Vector2(640, 673)
+texture = ExtResource("10_6bfml")

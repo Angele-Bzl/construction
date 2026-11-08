@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dui6mev36aftd"]
+
+[ext_resource type="Script" uid="uid://d2nuv0vl4s7ug" path="res://Scripts/end_screen.gd" id="1_lugr4"]
+[ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="2_3np5u"]
+
+[node name="EndScreen" type="Control" unique_id=355343183]
+process_mode = 3
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lugr4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1430477067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.37254903)
+
+[node name="Structure" type="VBoxContainer" parent="." unique_id=1663468765]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -38.5
+offset_right = 61.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="Structure" unique_id=1235594206]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="Structure" unique_id=1098211507]
+layout_mode = 2
+text = "Winner : ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLeftScoreLeft" type="Label" parent="Structure" unique_id=1935580942]
+layout_mode = 2
+text = "Score/Time Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Space" type="Control" parent="Structure" unique_id=415506361]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="Structure" unique_id=1082588658]
+layout_mode = 2
+text = "Retry"
+script = ExtResource("2_3np5u")
+metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
+
+[node name="MainMenuButton" type="Button" parent="Structure" unique_id=1161755095]
+layout_mode = 2
+text = "Go back to main menu"
+script = ExtResource("2_3np5u")
+metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
+
+[connection signal="mouse_entered" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Structure/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Structure/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_pressed"]

@@ -5,6 +5,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrivr"]
 
 [node name="HUD" type="Control" unique_id=1297925502]
+z_index = 20
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
