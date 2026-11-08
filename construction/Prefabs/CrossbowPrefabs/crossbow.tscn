@@ -7,6 +7,96 @@
 [ext_resource type="Texture2D" uid="uid://cf047il2lsdnn" path="res://Assets/Placeholders/Conneries Charles/SliderThreshold.png" id="5_3oy0q"]
 [ext_resource type="Texture2D" uid="uid://dlyeod7aq1j57" path="res://Assets/Placeholders/Conneries Charles/Slider.png" id="6_pp7s2"]
 
+[sub_resource type="Animation" id="Animation_pxscx"]
+resource_name = "Charged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.99253726), Vector2(1.1, 0.843)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3oy0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.99253726)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.2471924, -0.4095039)]
+}
+
+[sub_resource type="Animation" id="Animation_pp7s2"]
+resource_name = "Trembling"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07946683, 0.18134739, 0.26896465, 0.40344697),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.2471924, -0.4095039), Vector2(-2.617, -1.29), Vector2(-3.237, 0.685), Vector2(-4.777, -1.825), Vector2(-1.2471924, -0.4095039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pp7s2"]
+_data = {
+&"Charged": SubResource("Animation_pxscx"),
+&"RESET": SubResource("Animation_3oy0q"),
+&"Trembling": SubResource("Animation_pp7s2")
+}
+
 [node name="Crossbow" type="Node2D" unique_id=641207508]
 script = ExtResource("1_4nqyt")
 bullet = ExtResource("2_1am8m")
@@ -15,17 +105,24 @@ bullet = ExtResource("2_1am8m")
 scale = Vector2(1.2121212, 1.2121212)
 
 [node name="CrossbowCannonSprite" type="Sprite2D" parent="CrossbowSprite" unique_id=116472228]
-position = Vector2(26.399998, 0)
+position = Vector2(-1.2471924, -0.4095039)
 rotation = 1.5707964
 scale = Vector2(1, 0.99253726)
 texture = ExtResource("3_tqs0r")
+offset = Vector2(0.40950269, -27.855064)
+
+[node name="AnimationPlayer_Charged" type="AnimationPlayer" parent="CrossbowSprite/CrossbowCannonSprite" unique_id=973314064]
+libraries/ = SubResource("AnimationLibrary_pp7s2")
+
+[node name="AnimationPlayer_Trembling" type="AnimationPlayer" parent="CrossbowSprite/CrossbowCannonSprite" unique_id=732378017]
+libraries/ = SubResource("AnimationLibrary_pp7s2")
 
 [node name="BulletSpawn" type="Node2D" parent="CrossbowSprite/CrossbowCannonSprite" unique_id=743754746]
 position = Vector2(0, -26.5985)
 scale = Vector2(0.99999994, 1.0075188)
 
 [node name="Sprite2D" type="Sprite2D" parent="CrossbowSprite/CrossbowCannonSprite" unique_id=1431237085]
-position = Vector2(-9.0154737e-07, -20.780075)
+position = Vector2(0, -48.14)
 rotation = -1.5707964
 scale = Vector2(1.78, 1.78)
 texture = ExtResource("4_pxscx")

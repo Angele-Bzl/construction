@@ -8,7 +8,7 @@
 script = ExtResource("2_8h317")
 
 [node name="BlockSprite" parent="." index="0" unique_id=1034150835]
-scale = Vector2(0.5333333, 0.5333333)
+position = Vector2(0, -0.9999981)
 texture = ExtResource("2_gqxav")
 centered = true
 offset = Vector2(0, 0)
@@ -17,8 +17,9 @@ offset = Vector2(0, 0)
 visible = false
 
 [node name="Drop Shadow" parent="BlockSprite" index="1" unique_id=2073492646]
-position = Vector2(0, 30.505)
+position = Vector2(0, 0)
 scale = Vector2(0.455, 0.455)
+offset = Vector2(-58.55, 117.855)
 
 [node name="BlockCollision" parent="." index="1" unique_id=41598474]
 scale = Vector2(0.89, 1.81)
