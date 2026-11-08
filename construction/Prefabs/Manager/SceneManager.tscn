@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cqkxcn0bj5os7"]
+
+[ext_resource type="Script" uid="uid://d4j4dxpw1dq62" path="res://Scripts/Manager/scene_manager.gd" id="1_fuo1x"]
+
+[sub_resource type="Animation" id="Animation_ahf04"]
+resource_name = "transi"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0q3rl"]
+_data = {
+&"transi": SubResource("Animation_ahf04")
+}
+
+[node name="SceneManager" type="Control" unique_id=1053171044]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fuo1x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1533932624]
+libraries/ = SubResource("AnimationLibrary_0q3rl")

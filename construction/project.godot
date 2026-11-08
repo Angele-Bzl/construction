@@ -15,11 +15,16 @@ run/main_scene="uid://cpdlsp1yo4v5f"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cwxap71lw40jg"
+
 [autoload]
 
 GlobalManager="*uid://ege2p55qw04x"
 Attacker="*uid://b1g72870y0e3d"
 Defender="*uid://blug3l7gxp35r"
+AudioManager="*uid://cxvfsqh64rxgx"
 
 [display]
 
