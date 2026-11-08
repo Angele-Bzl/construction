@@ -23,5 +23,3 @@ shape = SubResource("CircleShape2D_xrivr")
 
 [node name="BulletAreaCollision" type="CollisionShape2D" parent="BulletArea" unique_id=672661400]
 shape = SubResource("CircleShape2D_3nda5")
-
-[connection signal="input_event" from="BulletArea" to="." method="_on_bullet_area_input_event"]
