@@ -8,6 +8,7 @@ var patterns : Array[PackedScene]
 var next_pattern : PackedScene
 
 func _ready():
+	
 	Defender.pattern_snapped.connect(generate_new_pattern)
 	
 	_get_pattern_files()
