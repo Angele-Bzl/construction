@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 @onready var click_sfx : AudioStreamPlayer = $SFX/ClickSFX
 @onready var bomb_fuse_sfx : AudioStreamPlayer = $SFX/BombFuseSFX
 @onready var cannon_sfx : AudioStreamPlayer = $SFX/CannonSFX
+@onready var block_destroyed_sfx : AudioStreamPlayer = $SFX/BlockDestroyedSFX
 
 @onready var game_music : AudioStreamPlayer = $Music/GameMusic
 @onready var main_menu_music = $Music/MainMenuMusic

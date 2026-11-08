@@ -33,10 +33,10 @@ theme = SubResource("Theme_oh2ji")
 script = ExtResource("1_lepgj")
 
 [node name="PanelDefender" type="PanelContainer" parent="." unique_id=1881136469]
-custom_minimum_size = Vector2(310, 720)
-custom_maximum_size = Vector2(310, 720)
+custom_minimum_size = Vector2(288, 720)
+custom_maximum_size = Vector2(288, 720)
 layout_mode = 1
-offset_right = 310.0
+offset_right = 300.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7bsgg")
 
@@ -147,8 +147,8 @@ texture = ExtResource("6_p2dku")
 stretch_mode = 5
 
 [node name="PanelAttacker" type="PanelContainer" parent="." unique_id=1282201895]
-custom_minimum_size = Vector2(310, 720)
-custom_maximum_size = Vector2(310, 720)
+custom_minimum_size = Vector2(288, 720)
+custom_maximum_size = Vector2(288, 720)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -160,9 +160,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7bsgg")
 
 [node name="MarginAttacker" type="MarginContainer" parent="PanelAttacker" unique_id=1463767462]
 layout_mode = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 28
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
+theme_override_constants/margin_right = 28
 theme_override_constants/margin_bottom = 32
 
 [node name="AttackerInfoPanel" type="VBoxContainer" parent="PanelAttacker/MarginAttacker" unique_id=1683107483]
@@ -202,7 +202,7 @@ layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("3_omdad")
 theme_override_font_sizes/font_size = 20
-text = "Available Ammunition"
+text = "Ammunition"
 horizontal_alignment = 1
 vertical_alignment = 1
 

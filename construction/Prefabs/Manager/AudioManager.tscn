@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://7rtrf7jryvhu" path="res://Sounds/SFX/click.wav" id="4_soxdg"]
 [ext_resource type="AudioStream" uid="uid://wt2gofjaengm" path="res://Sounds/SFX/bomb_fuse.wav" id="5_bmuej"]
 [ext_resource type="AudioStream" uid="uid://csrxasrsyu6cu" path="res://Sounds/SFX/cannon.wav" id="6_wy23a"]
+[ext_resource type="AudioStream" uid="uid://bsf1swpapa4xj" path="res://Sounds/SFX/bricks_falling.wav" id="9_in36k"]
 
 [node name="AudioManager" type="Node" unique_id=967250193]
 script = ExtResource("1_5um5d")
@@ -42,4 +43,8 @@ bus = &"SFX"
 
 [node name="CannonSFX" type="AudioStreamPlayer" parent="SFX" unique_id=2082462506]
 stream = ExtResource("6_wy23a")
+bus = &"SFX"
+
+[node name="BlockDestroyedSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1037996305]
+stream = ExtResource("9_in36k")
 bus = &"SFX"
