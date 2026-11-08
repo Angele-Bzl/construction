@@ -2,13 +2,15 @@ extends Node2D
 
 @onready var pattern_spawn = $PatternSpawn
 @onready var block_container = $BlockContainer
+@onready var nexus = $Nexus
+
+@export var block : PackedScene
 
 var patterns : Array[PackedScene]
 
 var next_pattern : PackedScene
 
 func _ready():
-	
 	Defender.pattern_snapped.connect(generate_new_pattern)
 	
 	_get_pattern_files()
@@ -39,6 +41,9 @@ func _get_pattern_files():
 		print("can't access pattern file")
 	
 	print(patterns)
+
+func generate_starting_elements(starting_blocks : int):
+	pass
 
 func generate_new_pattern():
 	if next_pattern:

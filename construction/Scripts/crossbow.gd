@@ -19,8 +19,12 @@ class_name Crossbow
 
 func _process(delta):
 	if Input.is_action_pressed("right_click"):
+		if !AudioManager.bomb_fuse_sfx.playing:
+			AudioManager.bomb_fuse_sfx.play()
 		shoot()
 	else:
+		if AudioManager.bomb_fuse_sfx.playing:
+			AudioManager.bomb_fuse_sfx.stop()
 		aim_assist_image.visible = false
 
 func _physics_process(delta):
@@ -52,7 +56,9 @@ func shoot():
 	if Input.is_action_just_released("scroll_down"):
 		charging()
 	if shoot_timer.is_stopped() && Input.is_action_just_pressed("left_click") && Attacker.stock > 0 && charge > 3:
-		shoot_timer.start(shoot_cooldown)
+		AudioManager.cannon_sfx.play()
+		#plus besoin a priori ?
+		#shoot_timer.start(shoot_cooldown)
 		var mouse_position = get_global_mouse_position()
 		var angle_to_mouse = global_position.direction_to(mouse_position)
 		

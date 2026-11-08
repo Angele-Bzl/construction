@@ -2,9 +2,11 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 
-@onready var bump_sfx = $SFX/BumpSFX
-@onready var plop_sfx = $SFX/PlopSFX
-@onready var click_sfx = $SFX/ClickSFX
+@onready var bump_sfx : AudioStreamPlayer = $SFX/BumpSFX
+@onready var plop_sfx : AudioStreamPlayer = $SFX/PlopSFX
+@onready var click_sfx : AudioStreamPlayer = $SFX/ClickSFX
+@onready var bomb_fuse_sfx : AudioStreamPlayer = $SFX/BombFuseSFX
+@onready var cannon_sfx : AudioStreamPlayer = $SFX/CannonSFX
 
 func fade_out(stream_player : AudioStreamPlayer, time : float = 1.5, volume : float = -20.0):
 	if stream_player.playing:

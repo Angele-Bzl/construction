@@ -9,12 +9,13 @@ class_name Block
 
 @export var max_hp : float = 3.0
 
+@export var textures : Array[CompressedTexture2D]
+@export var top_textures : Array[CompressedTexture2D]
+
 var current_hp : float = max_hp:
 	set(value):
 		current_hp = value
-		var ratio = value/max_hp
-		block_sprite.self_modulate = Color(1,ratio,ratio)
-		block_top.self_modulate = Color(1,ratio,ratio)
+		update_visual()
 		if current_hp <= 0.0:
 			die()
 signal is_collided(bullet : Bullet)
@@ -36,6 +37,17 @@ func take_damage(bullet : Bullet):
 	impact_animation.play("Impact")
 	GlobalManager.trigger_light_screenshake.emit()
 	AudioManager.play_sound_with_rdm_pitch(AudioManager.bump_sfx)
+
+func update_visual():
+	var hp_ratio : float = current_hp/max_hp
+	block_sprite.self_modulate = Color(1,hp_ratio,hp_ratio)
+	block_top.self_modulate = Color(1,hp_ratio,hp_ratio)
+	if textures.size() == top_textures.size():
+		for i in range(0,textures.size()-1):
+			var ratio : float = i/textures.size()
+			if hp_ratio >= ratio:
+				block_sprite.texture = textures[i]
+				block_top.texture = top_textures[i]
 
 func can_snap() -> bool:
 	if collision_layer == 0 and block_detection.get_overlapping_bodies().size() == 0:

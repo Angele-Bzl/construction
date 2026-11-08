@@ -20,6 +20,7 @@ size = Vector2(432, 20)
 
 [node name="MainScene" type="Node2D" unique_id=533807947]
 script = ExtResource("1_m1efj")
+block = ExtResource("5_iacmt")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=573347135]
 anchor_mode = 0
@@ -41,11 +42,11 @@ scale = Vector2(7.5739646, 6.6666665)
 texture = ExtResource("1_jv6wh")
 centered = false
 
-[node name="Ground" type="Sprite2D" parent="." unique_id=2103564826]
-position = Vector2(431, 0)
+[node name="Ground" type="TextureRect" parent="." unique_id=1142738223]
+offset_left = 431.0
+offset_right = 431.0
 scale = Vector2(1.0887729, 1.0526316)
 texture = ExtResource("2_x6ack")
-centered = false
 
 [node name="Walls" type="Node2D" parent="." unique_id=1550099786]
 
@@ -109,6 +110,10 @@ position = Vector2(448, 32)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 position = Vector2(640, 96)
+LEFT_DEFENDER_ZONE = 450
+RIGHT_DEFENDER_ZONE = 864
+TOP_DEFENDER_ZONE = 32
+HALF_DEFENDER_ZONE = 256
 
 [node name="CrossbowShooter" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
 z_index = 1
