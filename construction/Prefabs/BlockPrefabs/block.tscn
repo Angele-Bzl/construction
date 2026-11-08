@@ -70,10 +70,10 @@ offset = Vector2(-69.51, -247.635)
 
 [node name="Drop Shadow" type="Sprite2D" parent="BlockSprite" unique_id=2073492646]
 z_index = -1
-position = Vector2(119.29825, 126.315796)
+position = Vector2(277.193, 136.8421)
 texture = ExtResource("4_83mfk")
 centered = false
-offset = Vector2(-178.74826, -127.220795)
+offset = Vector2(-336.643, -137.7471)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BlockSprite" unique_id=502219978]
 libraries/ = SubResource("AnimationLibrary_tlobo")
