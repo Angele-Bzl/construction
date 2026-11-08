@@ -12,9 +12,23 @@ const PATTERN_PATH : String = "res://Prefabs/BlockPrefabs/PatternPrefabs/"
 const TILE : Vector2 = Vector2(32.0,32.0)
 
 var starting_timer : float = 60.0
-var timer : float = starting_timer
+var timer : Timer = Timer.new()
 
+func _ready():
+	add_child(timer)
+	timer.timeout.connect(_timer_is_over)
+	
+	timer.one_shot = true
+	timer.autostart = false
+
+func _timer_is_over():
+	winner = "Defender"
+	end_game.emit()
+
+func start_game_timer():
+	print("heho")
+	timer.start(starting_timer)
 
 func reset_game_parameters():
 	winner = ""
-	timer = starting_timer
+	timer.stop()

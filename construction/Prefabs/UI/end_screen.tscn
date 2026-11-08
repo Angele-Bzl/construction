@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="2_3np5u"]
 
 [node name="EndScreen" type="Control" unique_id=355343183]
+process_mode = 3
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,7 +74,9 @@ metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
 [connection signal="mouse_entered" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Structure/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Structure/RetryButton" to="Structure/RetryButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Structure/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Structure/MainMenuButton" to="Structure/MainMenuButton" method="_on_pressed"]

@@ -13,6 +13,8 @@ func _ready():
 	await get_tree().process_frame
 	
 	generate_new_pattern()
+	
+	GlobalManager.start_game_timer()
 
 #fonction pour récupérer les différents 
 func _get_pattern_files():

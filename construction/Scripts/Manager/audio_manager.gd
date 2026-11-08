@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 @onready var bump_sfx = $SFX/BumpSFX
 @onready var plop_sfx = $SFX/PlopSFX
+@onready var click_sfx = $SFX/ClickSFX
 
 func fade_out(stream_player : AudioStreamPlayer, time : float = 1.5, volume : float = -20.0):
 	if stream_player.playing:
