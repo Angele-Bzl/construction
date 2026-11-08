@@ -9,5 +9,6 @@ func _ready():
 
 func take_damage(bullet : Bullet):
 	GlobalManager.trigger_big_screenshake.emit()
+	AudioManager.play_sound_with_rdm_pitch(AudioManager.bump_sfx)
 	current_hp -= bullet.damage
 	Defender.nexus_hp = current_hp

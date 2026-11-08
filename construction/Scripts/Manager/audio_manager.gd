@@ -2,6 +2,8 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 
+@onready var bump_sfx = $SFX/BumpSFX
+
 func fade_out(stream_player : AudioStreamPlayer, time : float = 1.5, volume : float = -20.0):
 	if stream_player.playing:
 		var tween = create_tween()

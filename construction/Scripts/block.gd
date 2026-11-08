@@ -33,6 +33,7 @@ func _integrate_forces(state):
 func take_damage(bullet : Bullet):
 	current_hp -= bullet.damage
 	GlobalManager.trigger_light_screenshake.emit()
+	AudioManager.play_sound_with_rdm_pitch(AudioManager.bump_sfx)
 
 func can_snap() -> bool:
 	if collision_layer == 0 and block_detection.get_overlapping_bodies().size() == 0:
