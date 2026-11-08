@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2nuv0vl4s7ug" path="res://Scripts/end_screen.gd" id="1_lugr4"]
 [ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="2_3np5u"]
+[ext_resource type="Theme" uid="uid://qds6je0imcnu" path="res://Ressources/Themes/button.tres" id="2_5utrv"]
 
 [node name="EndScreen" type="Control" unique_id=355343183]
 process_mode = 3
@@ -61,14 +62,18 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="RetryButton" type="Button" parent="Structure" unique_id=1082588658]
+custom_minimum_size = Vector2(320, 70)
 layout_mode = 2
-text = "Retry"
+theme = ExtResource("2_5utrv")
+text = "RETRY"
 script = ExtResource("2_3np5u")
 metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
 [node name="MainMenuButton" type="Button" parent="Structure" unique_id=1161755095]
+custom_minimum_size = Vector2(320, 70)
 layout_mode = 2
-text = "Go back to main menu"
+theme = ExtResource("2_5utrv")
+text = "BACK TO MAIN MENU"
 script = ExtResource("2_3np5u")
 metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
