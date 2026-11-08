@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bvjmuxklp77qj" path="res://Assets/Placeholders/Conneries Charles/Group 24.png" id="5_12m1t"]
 [ext_resource type="Theme" uid="uid://qds6je0imcnu" path="res://Ressources/Themes/button.tres" id="6_sqelc"]
 [ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="8_8mikk"]
+[ext_resource type="Texture2D" uid="uid://dk7rr4je5r8vt" path="res://Assets/UI/Credits/Credits.png" id="10_8mikk"]
 
 [node name="TitleScreen" type="Control" unique_id=493476337]
 layout_mode = 3
@@ -19,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4gxqj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1511773214]
+[node name="Background" type="TextureRect" parent="." unique_id=1511773214]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -289,6 +290,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 24
 text = "CLOSE"
+
+[node name="Credits" type="TextureRect" parent="." unique_id=11626163]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("10_8mikk")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="mouse_entered" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_exited"]
