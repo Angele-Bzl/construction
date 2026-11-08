@@ -5,8 +5,9 @@ class_name Block
 @onready var block_top = $BlockSprite/BlockTop
 @onready var filter = $ColorFilter
 @onready var block_detection = $BlockDetection
+@onready var impact_animation = $BlockSprite/AnimationPlayer
 
-@export var max_hp : float = 5.0
+@export var max_hp : float = 3.0
 
 var current_hp : float = max_hp:
 	set(value):
@@ -32,6 +33,7 @@ func _integrate_forces(state):
 
 func take_damage(bullet : Bullet):
 	current_hp -= bullet.damage
+	impact_animation.play("Impact")
 	GlobalManager.trigger_light_screenshake.emit()
 	AudioManager.play_sound_with_rdm_pitch(AudioManager.bump_sfx)
 

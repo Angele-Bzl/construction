@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bucw8eyqwc758"]
+
+[ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="1_u18l8"]
+[ext_resource type="Script" uid="uid://cs7egyejg50oe" path="res://Scripts/nexus.gd" id="2_pjeiy"]
+[ext_resource type="Texture2D" uid="uid://bdm0ch7ivujax" path="res://Assets/Placeholders/placeholder_nexus.png" id="3_cyj24"]
+
+[node name="Nexus" unique_id=407422604 instance=ExtResource("1_u18l8")]
+script = ExtResource("2_pjeiy")
+
+[node name="BlockSprite" parent="." index="0" unique_id=1034150835]
+scale = Vector2(1, 1)
+texture = ExtResource("3_cyj24")
+centered = true
+offset = Vector2(0, 0)
+
+[node name="BlockTop" parent="BlockSprite" index="0" unique_id=1836335206]
+visible = false
+
+[node name="Drop Shadow" parent="BlockSprite" index="1" unique_id=2073492646]
+position = Vector2(0, 30.505)
+scale = Vector2(0.455, 0.455)
+
+[node name="BlockCollision" parent="." index="1" unique_id=41598474]
+scale = Vector2(0.89, 1.81)
+
+[node name="BlockDetection" parent="." index="2" unique_id=1880383099]
+scale = Vector2(1.925, 1.925)
+
+[node name="BlockDetectionCollision" parent="BlockDetection" index="0" unique_id=1666127460]
+scale = Vector2(0.86, 1.745)
