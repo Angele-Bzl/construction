@@ -5,6 +5,8 @@
 
 [node name="Pattern7" unique_id=103748082 instance=ExtResource("1_6naft")]
 pattern_img = ExtResource("2_mucfk")
+largeur = 32
+hauteur = 128
 
 [node name="Block2" parent="." index="1" unique_id=1292690081]
 position = Vector2(16, 112)

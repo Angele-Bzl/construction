@@ -5,6 +5,8 @@
 
 [node name="Pattern4" unique_id=103748082 instance=ExtResource("1_50ggh")]
 pattern_img = ExtResource("2_0e8jh")
+largeur = 128
+hauteur = 32
 
 [node name="Block4" parent="." index="3" unique_id=1347714736]
 position = Vector2(112, 16)
