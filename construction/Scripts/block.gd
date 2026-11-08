@@ -6,7 +6,7 @@ class_name Block
 @onready var filter = $ColorFilter
 @onready var block_detection = $BlockDetection
 
-@export var max_hp : float = 5.0
+@export var max_hp : float = 3.0
 
 var current_hp : float = max_hp:
 	set(value):

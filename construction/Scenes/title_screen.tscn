@@ -84,6 +84,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "START GAME"
 
+[node name="StartTestLevelButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=966193743]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "START TEST LEVEL"
+
 [node name="HowToPlayButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1422349549]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
