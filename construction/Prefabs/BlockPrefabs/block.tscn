@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dmm0qqj4gh5up"]
 
 [ext_resource type="Script" uid="uid://bbd2ymjpgamm0" path="res://Scripts/block.gd" id="1_mppv7"]
+[ext_resource type="Texture2D" uid="uid://cwp0xnatutuyq" path="res://Assets/Items/Brick dmg2.png" id="2_d7qm1"]
 [ext_resource type="Texture2D" uid="uid://evwt1q6ctoj1" path="res://Assets/Items/Brick.png" id="2_mppv7"]
 [ext_resource type="Texture2D" uid="uid://d3g3y2rhdcr1l" path="res://Assets/Items/Brick top.png" id="3_4xu17"]
+[ext_resource type="Texture2D" uid="uid://bmcvbgvvidejt" path="res://Assets/Items/Brick dmg1.png" id="3_ha7bv"]
 [ext_resource type="Texture2D" uid="uid://cbuotl3u3jdii" path="res://Assets/Items/drop shadow block.png" id="4_83mfk"]
+[ext_resource type="Texture2D" uid="uid://c4esbcd4r2j34" path="res://Assets/Items/Brick top dmg2.png" id="5_50g0k"]
+[ext_resource type="Texture2D" uid="uid://b7ystat3qjb4c" path="res://Assets/Items/Brick top dmg1.png" id="6_xrj2c"]
 
 [sub_resource type="Animation" id="Animation_83mfk"]
 resource_name = "Impact"
@@ -53,6 +57,8 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 8
 script = ExtResource("1_mppv7")
+textures = Array[CompressedTexture2D]([ExtResource("2_d7qm1"), ExtResource("3_ha7bv"), ExtResource("2_mppv7")])
+top_textures = Array[CompressedTexture2D]([ExtResource("5_50g0k"), ExtResource("6_xrj2c"), ExtResource("3_4xu17")])
 
 [node name="BlockSprite" type="Sprite2D" parent="." unique_id=1034150835]
 z_index = 2
