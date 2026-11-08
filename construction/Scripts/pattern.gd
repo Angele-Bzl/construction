@@ -71,3 +71,8 @@ func snap_to_ground():
 		Defender.pattern_snapped.emit()
 	else:
 		print("Can't snap pattern here !")
+		for block in get_blocks():
+			print(block.name)
+			for entity in block.block_detection.get_overlapping_bodies():
+				print("Overlap with " + entity.name)
+		
