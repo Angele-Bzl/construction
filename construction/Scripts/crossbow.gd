@@ -8,7 +8,7 @@ class_name Crossbow
 @onready var anim_canon_trembling = $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Trembling
 @onready var anim_canon_charged= $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Charged
 @onready var aim_assist_image = $CrossbowSprite/CrossbowCannonSprite/AimAssistImage
-
+@onready var particles_canon = $CrossbowSprite/CrossbowCannonSprite/CPUParticles2D
 @export var charge : float = 0.0
 
 #---- Slider charge ----
@@ -60,6 +60,7 @@ func charging():
 
 func shoot():
 	AudioManager.cannon_sfx.play()
+	particles_canon.restart()
 	var mouse_position = get_global_mouse_position()
 	var angle_to_mouse = global_position.direction_to(mouse_position)
 	
