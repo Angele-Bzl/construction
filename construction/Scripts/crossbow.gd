@@ -8,6 +8,8 @@ class_name Crossbow
 @export var shoot_cooldown : float = 2.0
 @onready var anim_canon_trembling = $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Trembling
 @onready var anim_canon_charged= $CrossbowSprite/CrossbowCannonSprite/AnimationPlayer_Charged
+@onready var aim_assist_image = $CrossbowSprite/CrossbowCannonSprite/AimAssistImage
+
 @export var charge : float = 0.1
 
 #---- Slider charge ----
