@@ -5,37 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://b60tbjrusq0eh" path="res://Assets/Placeholders/Conneries Charles/Group 45.png" id="2_4gxqj"]
 [ext_resource type="Texture2D" uid="uid://b2hatc4sh0e3l" path="res://Assets/UI/Line/LineDark.png" id="3_0061g"]
 [ext_resource type="FontFile" uid="uid://c56qldv5b0dxm" path="res://Assets/UI/Font/CinzelDecorative-Black.ttf" id="3_n82rj"]
-[ext_resource type="Texture2D" uid="uid://dtcawao75tib" path="res://Assets/UI/Button/White.png" id="4_6vd4x"]
 [ext_resource type="Texture2D" uid="uid://c0tmahdce6q3p" path="res://Assets/Placeholders/Conneries Charles/Clavier.png" id="4_55kwv"]
 [ext_resource type="Texture2D" uid="uid://bvjmuxklp77qj" path="res://Assets/Placeholders/Conneries Charles/Group 24.png" id="5_12m1t"]
-[ext_resource type="Texture2D" uid="uid://dah6rbcykum5n" path="res://Assets/UI/Button/Dark.png" id="5_n82rj"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55kwv"]
-texture = ExtResource("4_6vd4x")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8o21p"]
-texture = ExtResource("5_n82rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywufg"]
-texture = ExtResource("5_n82rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mikk"]
-texture = ExtResource("4_6vd4x")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqelc"]
-texture = ExtResource("5_n82rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5sh6"]
-texture = ExtResource("5_n82rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vd4x"]
-texture = ExtResource("4_6vd4x")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n82rj"]
-texture = ExtResource("5_n82rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0061g"]
-texture = ExtResource("5_n82rj")
+[ext_resource type="Theme" uid="uid://qds6je0imcnu" path="res://Ressources/Themes/button.tres" id="6_sqelc"]
+[ext_resource type="Script" uid="uid://c0fuwaxy1tw21" path="res://Scripts/bouncy_button.gd" id="8_8mikk"]
+[ext_resource type="Texture2D" uid="uid://dk7rr4je5r8vt" path="res://Assets/UI/Credits/Credits.png" id="10_8mikk"]
 
 [node name="TitleScreen" type="Control" unique_id=493476337]
 layout_mode = 3
@@ -46,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4gxqj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1511773214]
+[node name="Background" type="TextureRect" parent="." unique_id=1511773214]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,19 +103,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 10
 
-[node name="StartGameButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1942655691]
+[node name="StartGameButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=202802301]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
-theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_55kwv")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8o21p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ywufg")
+theme = ExtResource("6_sqelc")
 text = "START GAME"
+script = ExtResource("8_8mikk")
+metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
 [node name="StartTestLevelButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=966193743]
 visible = false
@@ -165,33 +133,21 @@ theme_override_font_sizes/font_size = 24
 disabled = true
 text = "OPTION"
 
-[node name="CreditsButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=577436562]
+[node name="CreditsButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1156772762]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
-theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_8mikk")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_sqelc")
-theme_override_styles/hover = SubResource("StyleBoxTexture_w5sh6")
+theme = ExtResource("6_sqelc")
 text = "CREDITS"
+script = ExtResource("8_8mikk")
+metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
-[node name="QuitButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1536067376]
+[node name="QuitButton" type="Button" parent="TSMain/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=883251405]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
-theme_override_colors/font_focus_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.8156863, 0.5882353, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_6vd4x")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_n82rj")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0061g")
+theme = ExtResource("6_sqelc")
 text = "QUIT"
+script = ExtResource("8_8mikk")
+metadata/_custom_type_script = "uid://c0fuwaxy1tw21"
 
 [node name="TSHowToPlay" type="Control" parent="." unique_id=1590816908]
 visible = false
@@ -334,3 +290,21 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 24
 text = "CLOSE"
+
+[node name="Credits" type="TextureRect" parent="." unique_id=11626163]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("10_8mikk")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="mouse_entered" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartGameButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" to="TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton" method="_on_pressed"]

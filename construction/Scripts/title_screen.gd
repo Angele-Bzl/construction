@@ -7,6 +7,7 @@ extends Control
 @onready var credits_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/CreditsButton
 @onready var quit_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/QuitButton
 @onready var start_test_level_button: Button = $TSMain/MarginContainer/VBoxContainer2/VBoxContainer/StartTestLevelButton
+@onready var credits = $Credits
 
 
 @onready var ts_how_to_play: Control = $TSHowToPlay
@@ -15,6 +16,8 @@ extends Control
 
 func _ready() -> void:
 	AudioManager.fade_in(AudioManager.main_menu_music)
+	credits.visible = false
+	
 	
 	if start_game_button: 
 		start_game_button.pressed.connect(_on_start_game_button)
@@ -33,6 +36,10 @@ func _ready() -> void:
 	
 	ts_main.show()
 	ts_how_to_play.hide()
+
+func _process(delta):
+	if Input.is_action_just_pressed("left_click") and credits.visible == true:
+		credits.visible = false
 
 func _on_start_game_button() -> void:
 	AudioManager.fade_out(AudioManager.main_menu_music)
@@ -53,7 +60,7 @@ func _on_how_to_play_button_pressed() -> void:
 	ts_how_to_play.show()
 
 func _on_credit_button_pressed() -> void:
-	pass
+	credits.visible = true
 
 func _on_close_button_pressed() -> void:
 	ts_main.show()

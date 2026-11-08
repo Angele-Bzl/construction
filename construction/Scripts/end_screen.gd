@@ -8,6 +8,7 @@ func _ready():
 	visible = false
 
 func show_end_label():
+	AudioManager.bomb_fuse_sfx.stop()
 	visible = true
 	get_tree().paused = true
 	
@@ -22,8 +23,6 @@ func show_end_label():
 
 func _on_retry_button_pressed():
 	get_tree().paused = false
-	AudioManager.fade_out(AudioManager.game_music)
-	AudioManager.bomb_fuse_sfx.stop()
 	GlobalManager.reset_game_parameters()
 	Attacker.reset_game_parameters()
 	Defender.reset_game_parameters()

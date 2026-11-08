@@ -11,7 +11,7 @@ func _on_mouse_entered():
 	if b_tween:
 		b_tween.kill()
 	b_tween = create_tween()
-	b_tween.tween_property(self,"scale",Vector2(1.3,1.3),0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	b_tween.tween_property(self,"scale",Vector2(1.1,1.1),0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	
 	await get_tree().create_timer(0.2).timeout
 	
