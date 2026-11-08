@@ -14,6 +14,8 @@ extends Control
 
 
 func _ready() -> void:
+	AudioManager.fade_in(AudioManager.main_menu_music)
+	
 	if start_game_button: 
 		start_game_button.pressed.connect(_on_start_game_button)
 	if quit_button: 
@@ -32,10 +34,12 @@ func _ready() -> void:
 	ts_main.show()
 	ts_how_to_play.hide()
 
-func _on_start_game_button() -> void: 
+func _on_start_game_button() -> void:
+	AudioManager.fade_out(AudioManager.main_menu_music)
 	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
 
 func _on_test_level_button_pressed() -> void: 
+	AudioManager.fade_out(AudioManager.main_menu_music)
 	get_tree().change_scene_to_file("res://Scenes/test_scene.tscn")
 
 func _on_quit_button_pressed() -> void:

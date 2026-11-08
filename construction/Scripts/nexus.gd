@@ -12,3 +12,4 @@ func take_damage(bullet : Bullet):
 	AudioManager.play_sound_with_rdm_pitch(AudioManager.bump_sfx)
 	current_hp -= bullet.damage
 	Defender.nexus_hp = current_hp
+	impact_animation.play("Impact_nexus")

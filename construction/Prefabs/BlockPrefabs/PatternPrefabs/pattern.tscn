@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="1_fxuyb"]
 [ext_resource type="Script" uid="uid://cym2ok0uucpi0" path="res://Scripts/pattern.gd" id="1_n1af2"]
+[ext_resource type="Texture2D" uid="uid://b4ey0opernhxx" path="res://Assets/UI/Patterns/pattern.png" id="2_5xven"]
 
 [node name="Pattern" type="Node2D" unique_id=103748082]
 script = ExtResource("1_n1af2")
+pattern_img = ExtResource("2_5xven")
 
 [node name="Block" parent="." unique_id=407422604 instance=ExtResource("1_fxuyb")]
 position = Vector2(16, 32)

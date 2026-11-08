@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dynd7g2epift3"]
 
 [ext_resource type="PackedScene" uid="uid://du6bvr3c87on8" path="res://Prefabs/BlockPrefabs/PatternPrefabs/pattern.tscn" id="1_2tmu8"]
+[ext_resource type="Texture2D" uid="uid://44e4rw3cjhsv" path="res://Assets/UI/Patterns/pattern2.png" id="2_r2cc6"]
 
 [node name="Pattern2" unique_id=103748082 instance=ExtResource("1_2tmu8")]
+pattern_img = ExtResource("2_r2cc6")
 
 [node name="Block4" parent="." index="3" unique_id=1347714736]
 position = Vector2(48, 64)

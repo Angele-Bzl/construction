@@ -1,6 +1,8 @@
 extends Node2D
 class_name Pattern
 
+@export var pattern_img : CompressedTexture2D
+
 var is_selected = false:
 	set(value):
 		is_selected = value

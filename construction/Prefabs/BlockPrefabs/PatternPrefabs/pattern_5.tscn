@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://djf42kwux6bwf"]
 
 [ext_resource type="PackedScene" uid="uid://du6bvr3c87on8" path="res://Prefabs/BlockPrefabs/PatternPrefabs/pattern.tscn" id="1_mrdss"]
+[ext_resource type="Texture2D" uid="uid://d3nxodnmjvf66" path="res://Assets/UI/Patterns/pattern5.png" id="2_ymqy0"]
 
 [node name="Pattern5" unique_id=103748082 instance=ExtResource("1_mrdss")]
-position = Vector2(-1.2471924, -0.4095039)
 scale = Vector2(1, 0.99253726)
+pattern_img = ExtResource("2_ymqy0")
 
 [node name="Block3" parent="." index="2" unique_id=502402122]
 position = Vector2(16, 96)
