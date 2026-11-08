@@ -6,6 +6,7 @@ class_name Crossbow
 @export var rotation_speed :float = 2.0
 @onready var shoot_timer = $ShootCooldown
 @export var shoot_cooldown : float = 2.0
+@onready var aim_assist_image = $CrossbowSprite/CrossbowCannonSprite/AimAssistImage
 
 @export var charge : float = 0.1
 
@@ -17,6 +18,8 @@ class_name Crossbow
 func _process(delta):
 	if Input.is_action_pressed("right_click"):
 		shoot()
+	else:
+		aim_assist_image.visible = false
 
 func _physics_process(delta):
 	rotate_with_mouse_position(delta)
@@ -35,6 +38,8 @@ func charging():
 	
 	texture_progress_bar.value = charge
 	if charge > 3: 
+		aim_assist_image.visible = true
+		aim_assist_image.size.y = 50.0 + 200.0 * (charge - 3.0)
 		texture_progress_bar.self_modulate = Color("E93C3Cff")
 
 func shoot():
