@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cxvfsqh64rxgx"]
+
+[ext_resource type="Script" uid="uid://bmwkjocf7oc0e" path="res://Scripts/Manager/audio_manager.gd" id="1_5um5d"]
+
+[node name="AudioManager" type="Node" unique_id=967250193]
+script = ExtResource("1_5um5d")
+
+[node name="Music" type="Node" parent="." unique_id=730647465]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music" unique_id=1328438860]
+bus = &"Music"
+
+[node name="SFX" type="Node" parent="." unique_id=2124410299]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SFX" unique_id=711868527]
+bus = &"SFX"
