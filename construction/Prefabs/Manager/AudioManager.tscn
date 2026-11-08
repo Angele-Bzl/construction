@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bsf1swpapa4xj" path="res://Sounds/SFX/bricks_falling.wav" id="9_in36k"]
 
 [node name="AudioManager" type="Node" unique_id=967250193]
+process_mode = 3
 script = ExtResource("1_5um5d")
 
 [node name="Music" type="Node" parent="." unique_id=730647465]

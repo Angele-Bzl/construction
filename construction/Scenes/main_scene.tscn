@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://btth67ioelhyt" path="res://Prefabs/UI/hud.tscn" id="2_m1efj"]
 [ext_resource type="Script" uid="uid://bait0803872ov" path="res://Scripts/camera.gd" id="2_mai8y"]
 [ext_resource type="PackedScene" uid="uid://dui6mev36aftd" path="res://Prefabs/UI/end_screen.tscn" id="3_76v2p"]
-[ext_resource type="Texture2D" uid="uid://b6sedyukr0b27" path="res://Assets/Placeholders/placeholder_wall.png" id="3_iacmt"]
 [ext_resource type="PackedScene" uid="uid://cfubmk7s40qls" path="res://Prefabs/CrossbowPrefabs/crossbow.tscn" id="4_x6ack"]
 [ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="5_iacmt"]
 [ext_resource type="Texture2D" uid="uid://cpe6nep6cxb5l" path="res://Assets/Items/Canon base.png" id="5_maf8m"]
 [ext_resource type="PackedScene" uid="uid://ct3oijw5r6wfs" path="res://Prefabs/BlockPrefabs/nexus.tscn" id="6_6ev3c"]
 [ext_resource type="Texture2D" uid="uid://cfm157hsvuylg" path="res://Assets/Items/Background.png" id="7_76v2p"]
+[ext_resource type="PackedScene" uid="uid://c4n6e1rual5es" path="res://Prefabs/WorldPrefabs/barrier.tscn" id="9_drdnd"]
+[ext_resource type="Texture2D" uid="uid://1s2b4tljtric" path="res://Assets/Items/base_mountain.png" id="9_ioaeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
 size = Vector2(14, 720)
@@ -61,22 +62,12 @@ stretch_mode = 2
 [node name="Wall1" type="StaticBody2D" parent="Walls" unique_id=1512068386]
 position = Vector2(280, 384)
 
-[node name="WallSprite" type="Sprite2D" parent="Walls/Wall1" unique_id=361679672]
-position = Vector2(0, -23.999983)
-scale = Vector2(0.41025642, 2.6086957)
-texture = ExtResource("3_iacmt")
-
 [node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall1" unique_id=282814252]
 position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_76v2p")
 
 [node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=688039229]
 position = Vector2(1000, 384)
-
-[node name="WallSprite" type="Sprite2D" parent="Walls/Wall2" unique_id=1120225878]
-position = Vector2(0, -23.999983)
-scale = Vector2(0.41025642, 2.6086957)
-texture = ExtResource("3_iacmt")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall2" unique_id=829211651]
 position = Vector2(0, -24)
@@ -86,22 +77,21 @@ shape = SubResource("RectangleShape2D_xrivr")
 position = Vector2(640, 8)
 
 [node name="WallSprite" type="Sprite2D" parent="Walls/Wall3" unique_id=1156021529]
-position = Vector2(-7.6293945e-06, 0)
-scale = Vector2(18.871794, 0.05797107)
-texture = ExtResource("3_iacmt")
+position = Vector2(-7.6293945e-06, 16)
+scale = Vector2(0.6805294, 0.85594404)
+texture = ExtResource("9_ioaeq")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall3" unique_id=2096315868]
 shape = SubResource("RectangleShape2D_13qdw")
 
-[node name="Wall4" type="StaticBody2D" parent="Walls" unique_id=208249840]
-position = Vector2(640, 728)
+[node name="Barrier" parent="." unique_id=820234278 instance=ExtResource("9_drdnd")]
+position = Vector2(448, 688)
 
-[node name="WallSprite" type="Sprite2D" parent="Walls/Wall4" unique_id=226272177]
-scale = Vector2(11.076923, 0.05797107)
-texture = ExtResource("3_iacmt")
+[node name="Barrier2" parent="." unique_id=213392050 instance=ExtResource("9_drdnd")]
+position = Vector2(832, 688)
 
-[node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall4" unique_id=216096089]
-shape = SubResource("RectangleShape2D_13qdw")
+[node name="Barrier3" parent="." unique_id=854050089 instance=ExtResource("9_drdnd")]
+position = Vector2(648, 752)
 
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
 
