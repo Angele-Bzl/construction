@@ -4,11 +4,19 @@
 [ext_resource type="Script" uid="uid://cs7egyejg50oe" path="res://Scripts/nexus.gd" id="2_8h317"]
 [ext_resource type="Texture2D" uid="uid://bdm0ch7ivujax" path="res://Assets/Placeholders/placeholder_nexus.png" id="2_gqxav"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h317"]
+size = Vector2(63, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npx13"]
+size = Vector2(63, 63)
+
 [node name="Nexus" unique_id=407422604 instance=ExtResource("1_yw6gb")]
 script = ExtResource("2_8h317")
+textures = Array[CompressedTexture2D]([])
+top_textures = Array[CompressedTexture2D]([])
 
 [node name="BlockSprite" parent="." index="0" unique_id=1034150835]
-position = Vector2(0, -0.9999981)
+position = Vector2(31.725, 32.37625)
 texture = ExtResource("2_gqxav")
 centered = true
 offset = Vector2(0, 0)
@@ -22,7 +30,9 @@ scale = Vector2(0.455, 0.455)
 offset = Vector2(-58.55, 117.855)
 
 [node name="BlockCollision" parent="." index="1" unique_id=41598474]
-scale = Vector2(0.89, 1.81)
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_8h317")
 
 [node name="BlockDetectionCollision" parent="BlockDetection" parent_id_path=PackedInt32Array(1880383099) index="0" unique_id=1666127460]
-scale = Vector2(0.86, 1.745)
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_npx13")

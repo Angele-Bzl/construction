@@ -12,11 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://cpe6nep6cxb5l" path="res://Assets/Items/Canon base.png" id="5_maf8m"]
 [ext_resource type="PackedScene" uid="uid://ct3oijw5r6wfs" path="res://Prefabs/BlockPrefabs/nexus.tscn" id="6_6ev3c"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
+size = Vector2(14, 720)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(20, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(432, 20)
+size = Vector2(432, 14)
 
 [node name="MainScene" type="Node2D" unique_id=533807947]
 script = ExtResource("1_m1efj")
@@ -43,11 +46,14 @@ texture = ExtResource("1_jv6wh")
 centered = false
 
 [node name="Ground" type="TextureRect" parent="." unique_id=1142738223]
-offset_left = 431.0
-offset_right = 431.0
+offset_left = 440.00003
+offset_top = 16.0
+offset_right = 807.386
+offset_bottom = 669.6
 scale = Vector2(1.0887729, 1.0526316)
 mouse_filter = 2
 texture = ExtResource("2_x6ack")
+expand_mode = 1
 
 [node name="Walls" type="Node2D" parent="." unique_id=1550099786]
 
@@ -61,7 +67,7 @@ texture = ExtResource("3_iacmt")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Walls/Wall1" unique_id=282814252]
 position = Vector2(0, -24)
-shape = SubResource("RectangleShape2D_xrivr")
+shape = SubResource("RectangleShape2D_76v2p")
 
 [node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=688039229]
 position = Vector2(848, 384)
@@ -97,13 +103,10 @@ shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="BlockContainer" type="Node2D" parent="." unique_id=1674226568]
 
-[node name="PatternSpawn" type="Node2D" parent="." unique_id=828033140]
-position = Vector2(448, 32)
-
 [node name="Nexus" parent="." unique_id=407422604 instance=ExtResource("6_6ev3c")]
-position = Vector2(640, 96)
-textures = Array[CompressedTexture2D]([])
-top_textures = Array[CompressedTexture2D]([])
+
+[node name="PatternSpawn" type="Node2D" parent="." unique_id=828033140]
+position = Vector2(440, 16)
 
 [node name="CrossbowShooter" parent="." unique_id=641207508 instance=ExtResource("4_x6ack")]
 z_index = 1

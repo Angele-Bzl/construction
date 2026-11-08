@@ -49,10 +49,10 @@ func generate_starting_elements(starting_blocks : int):
 	var range_y : Vector2 = Vector2(ground.global_position.y/3,ground.global_position.y/3 + ground.size.y/3)
 	print("Range x : " + str(range_x))
 	print("Range y : " + str(range_y))
-	nexus.global_position = Vector2(rng.randf_range(range_x.x,range_x.y),rng.randf_range(range_y.x,range_y.y))
+	nexus.global_position = Vector2(rng.randi_range(range_x.x,range_x.y),rng.randi_range(range_y.x,range_y.y))
 	print("Nexus position : " + str(nexus.global_position))
-	nexus.global_position.x -= int(nexus.global_position.x) % int(GlobalManager.TILE.x)
-	nexus.global_position.y -= int(nexus.global_position.y) % int(GlobalManager.TILE.y)
+	nexus.global_position.x -= int(nexus.global_position.x) % int(GlobalManager.TILE.x*2)
+	nexus.global_position.y -= int(nexus.global_position.y) % int(GlobalManager.TILE.y*2)
 	print("Nexus position tile fixed : " + str(nexus.global_position))
 	
 	for i in starting_blocks:
