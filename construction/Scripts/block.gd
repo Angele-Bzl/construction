@@ -7,7 +7,7 @@ class_name Block
 @onready var block_detection = $BlockDetection
 @onready var impact_animation = $BlockSprite/AnimationPlayer
 
-@export var max_hp : float = 5.0
+@export var max_hp : float = 3.0
 
 var current_hp : float = max_hp:
 	set(value):
