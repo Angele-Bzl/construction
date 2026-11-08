@@ -1,9 +1,9 @@
 extends Control
 
-@onready var nexus_hp_label = $PanelDefender/MarginDefender/DefenderInfoPanel/VBoxPV/PVNumber
+@onready var nexus_hp_label = $PanelDefender/MarginDefender/DefenderInfoPanel/MarginContainer/VBoxPV/PVNumber
 @onready var nb_pallets_label = $PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginInfoAttacker/PanelAttacker/MarginPanelAttacker/NumberAttack
 
-@onready var timer_label = $PanelAttacker/MarginAttacker/AttackerInfoPanel/VBoxTimer/Timer
+@onready var timer_label = $PanelAttacker/MarginAttacker/AttackerInfoPanel/MarginContainer/VBoxTimer/Timer
 @onready var nextblock_image = $PanelDefender/MarginDefender/DefenderInfoPanel/MarginInfoDefender/PanelDefender/MarginPanelDefender/TextureNextBlock
 
 var tamp_nexus_hp : float
