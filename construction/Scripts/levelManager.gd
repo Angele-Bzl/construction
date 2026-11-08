@@ -5,6 +5,7 @@ var rng = RandomNumberGenerator.new()
 @onready var block_container = $BlockContainer
 @onready var nexus = $Nexus
 @onready var ground = $Ground
+@onready var hud = $HUD
 
 @export var block : PackedScene
 
@@ -14,6 +15,7 @@ var next_pattern : PackedScene
 
 func _ready():
 	Defender.pattern_snapped.connect(generate_new_pattern)
+	AudioManager.fade_in(AudioManager.game_music,1.0,-10.0)
 	
 	_get_pattern_files()
 	
@@ -67,6 +69,8 @@ func generate_starting_elements(starting_blocks : int):
 			for j in pos_around_nexus:
 				if nexus.global_position.y <= ground.global_position.y - int(ground.global_position.y) % int(GlobalManager.TILE.y*2) and j < 0:
 					print("Collé en haut")
+				elif nexus.global_position.y <= ground.global_position.y + GlobalManager.TILE.y * 2 - int(ground.global_position.y) % int(GlobalManager.TILE.y*2) and j < -1:
+					print("Un peu collé en haut")
 				else:
 					valid_pos_for_blocks.append(Vector2(i,j))
 	
@@ -95,3 +99,6 @@ func generate_new_pattern():
 		new_pattern.select()
 	if !patterns.is_empty():
 		next_pattern = patterns.pick_random()
+		var tamp_pattern : Pattern = next_pattern.instantiate()
+		hud.nextblock_image.texture = tamp_pattern.pattern_img.duplicate()
+		tamp_pattern.queue_free()

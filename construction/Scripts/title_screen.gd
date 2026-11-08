@@ -32,7 +32,7 @@ func _ready() -> void:
 	ts_main.show()
 	ts_how_to_play.hide()
 
-func _on_start_game_button() -> void: 
+func _on_start_game_button() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
 
 func _on_test_level_button_pressed() -> void: 
