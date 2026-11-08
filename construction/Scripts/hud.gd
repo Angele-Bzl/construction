@@ -17,6 +17,8 @@ func _process(delta):
 		nb_pallets_label.text = "Nb pallets left : " + str(Attacker.stock)
 	if tamp_timer != GlobalManager.timer:
 		timer_label.text = "Time left : " + str(GlobalManager.timer)
+	
+	update_tamps()
 
 func update_tamps():
 	tamp_nexus_hp = Defender.nexus_hp

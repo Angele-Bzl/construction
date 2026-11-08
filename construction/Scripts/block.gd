@@ -32,6 +32,7 @@ func _integrate_forces(state):
 
 func take_damage(bullet : Bullet):
 	current_hp -= bullet.damage
+	GlobalManager.trigger_light_screenshake.emit()
 
 func can_snap() -> bool:
 	if collision_layer == 0 and block_detection.get_overlapping_bodies().size() == 0:
@@ -56,4 +57,5 @@ func switch_color_filter(show : bool, color : bool = true):
 		filter.modulate = Color(1,0,0)
 
 func die():
+	GlobalManager.trigger_medium_screenshake.emit()
 	queue_free()

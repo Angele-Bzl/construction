@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ct3oijw5r6wfs"]
 
 [ext_resource type="PackedScene" uid="uid://dmm0qqj4gh5up" path="res://Prefabs/BlockPrefabs/block.tscn" id="1_yw6gb"]
+[ext_resource type="Script" uid="uid://cs7egyejg50oe" path="res://Scripts/nexus.gd" id="2_8h317"]
 [ext_resource type="Texture2D" uid="uid://bdm0ch7ivujax" path="res://Assets/Placeholders/placeholder_nexus.png" id="2_gqxav"]
 
 [node name="Nexus" unique_id=407422604 instance=ExtResource("1_yw6gb")]
-max_hp = 20.0
+script = ExtResource("2_8h317")
 
 [node name="BlockSprite" parent="." index="0" unique_id=1034150835]
 scale = Vector2(0.5333333, 0.5333333)

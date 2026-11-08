@@ -1,5 +1,10 @@
 extends Node
 
+var screenshake_enabled : bool = true
+signal trigger_light_screenshake()
+signal trigger_medium_screenshake()
+signal trigger_big_screenshake()
+
 const PATTERN_PATH : String = "res://Prefabs/BlockPrefabs/PatternPrefabs/"
 const TILE : Vector2 = Vector2(32.0,32.0)
 
