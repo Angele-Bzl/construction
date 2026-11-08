@@ -6,6 +6,8 @@
 [node name="Pattern5" unique_id=103748082 instance=ExtResource("1_mrdss")]
 scale = Vector2(1, 0.99253726)
 pattern_img = ExtResource("2_ymqy0")
+largeur = 64
+hauteur = 96
 
 [node name="Block3" parent="." index="2" unique_id=502402122]
 position = Vector2(16, 80.60151)

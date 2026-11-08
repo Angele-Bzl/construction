@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://db2vau7f70g2p" path="res://Assets/UI/Font/Bungee-Regular.ttf" id="4_isbnw"]
 [ext_resource type="Texture2D" uid="uid://44e4rw3cjhsv" path="res://Assets/UI/Patterns/pattern2.png" id="4_y0o8b"]
 [ext_resource type="Texture2D" uid="uid://dqjbsdfkmmifv" path="res://Assets/UI/Help/Clavier.png" id="6_p2dku"]
+[ext_resource type="FontFile" uid="uid://cqkorgrekwq1g" path="res://Assets/UI/Font/SpaceGrotesk-Bold.ttf" id="6_w876c"]
 [ext_resource type="Texture2D" uid="uid://b5qlu8w1jgdsa" path="res://Assets/UI/Help/Souris1.png" id="7_odjyi"]
 [ext_resource type="Texture2D" uid="uid://c3ct2t02r5p5m" path="res://Assets/UI/Help/Souris2.png" id="8_nshva"]
 
@@ -100,6 +101,7 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("3_omdad")
+theme_override_fonts/font = ExtResource("6_w876c")
 theme_override_font_sizes/font_size = 20
 text = "Next Block"
 horizontal_alignment = 1
@@ -249,6 +251,7 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("3_omdad")
+theme_override_fonts/font = ExtResource("6_w876c")
 theme_override_font_sizes/font_size = 20
 text = "Ammunition"
 horizontal_alignment = 1

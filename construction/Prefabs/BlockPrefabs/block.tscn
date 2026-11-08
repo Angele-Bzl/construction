@@ -113,7 +113,7 @@ shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="ColorFilter" type="ColorRect" parent="." unique_id=2114929470]
 visible = false
-z_index = 4
+z_index = 10
 offset_left = -16.0
 offset_top = -32.0
 offset_right = 16.0

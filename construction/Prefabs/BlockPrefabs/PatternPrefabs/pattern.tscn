@@ -19,3 +19,7 @@ position = Vector2(80, 16)
 
 [node name="Block4" parent="." unique_id=1347714736 instance=ExtResource("1_fxuyb")]
 position = Vector2(16, 48)
+
+[node name="MovementCooldown" type="Timer" parent="." unique_id=1106983600]
+wait_time = 0.08
+one_shot = true

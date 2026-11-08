@@ -6,6 +6,7 @@ var rng = RandomNumberGenerator.new()
 @onready var nexus = $Nexus
 @onready var ground = $Ground
 @onready var hud = $HUD
+@onready var pattern_spawn = $PatternSpawn
 
 @export var block : PackedScene
 
@@ -21,7 +22,7 @@ func _ready():
 	
 	await get_tree().process_frame
 	
-	generate_starting_elements(5)
+	generate_starting_elements(8)
 	next_pattern = patterns.pick_random()
 	generate_new_pattern()
 	
@@ -98,7 +99,7 @@ func generate_starting_elements(starting_blocks : int):
 func generate_new_pattern():
 	if next_pattern:
 		var new_pattern : Pattern = next_pattern.instantiate()
-		new_pattern.global_position = ground.global_position
+		new_pattern.global_position = pattern_spawn.global_position
 		block_container.add_child(new_pattern)
 		new_pattern.select()
 	if !patterns.is_empty():
