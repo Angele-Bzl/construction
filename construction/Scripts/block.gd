@@ -87,8 +87,8 @@ func die():
 	tween.tween_property(block_sprite,"modulate",Color(1,1,1,0),0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
 	
 	tween.tween_property(ruin_sprite,"modulate",Color(1,1,1,1),0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(ruin_sprite,"modulate",Color(1,1,1,0),4.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR).set_delay(2.0)
+	tween.tween_property(ruin_sprite,"modulate",Color(1,1,1,0),2.0).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR).set_delay(2.0)
 	
-	await get_tree().create_timer(7.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	
 	queue_free()
