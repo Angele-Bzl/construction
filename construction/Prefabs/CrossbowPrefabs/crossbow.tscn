@@ -146,10 +146,10 @@ texture_over = ExtResource("5_3oy0q")
 texture_progress = ExtResource("6_pp7s2")
 
 [node name="AimAssistImage" type="TextureRect" parent="CrossbowSprite/CrossbowCannonSprite" unique_id=1425002736]
-offset_left = 1.0
-offset_top = -46.547
-offset_right = 3.0
-offset_bottom = 84.96463
+offset_left = 2.0
+offset_top = -74.402
+offset_right = 6.0
+offset_bottom = 84.66154
 rotation = 3.1415927
 texture = ExtResource("7_3oy0q")
 expand_mode = 4

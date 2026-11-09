@@ -113,8 +113,13 @@ func can_snap() -> bool:
 
 func snap_to_ground():
 	if can_snap():
+		AudioManager.landing_sfx.play()
 		deselect()
 		Defender.pattern_snapped.emit()
+		
+		for block in get_blocks():
+			block.land_anim()
+		
 	else:
 		print("Can't snap pattern here !")
 		for block in get_blocks():

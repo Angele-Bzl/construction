@@ -10,7 +10,8 @@ var tamp_nexus_hp : float
 var tamp_pallets : int
 
 func _ready():
-	GlobalManager.end_game.connect(hide_hud)
+	GlobalManager.hide_hud.connect(hide_hud)
+	
 
 func _process(delta):
 	if tamp_nexus_hp != Defender.nexus_hp:

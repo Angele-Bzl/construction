@@ -4,6 +4,7 @@ var screenshake_enabled : bool = true
 signal trigger_light_screenshake()
 signal trigger_medium_screenshake()
 signal trigger_big_screenshake()
+signal hide_hud()
 
 signal end_game()
 var winner : String = ""

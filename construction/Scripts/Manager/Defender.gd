@@ -11,6 +11,7 @@ var nexus_hp : float = nexus_max_hp:
 			GlobalManager.winner = "Attacker"
 			GlobalManager.end_game.emit()
 
+var cooldown_new_pattern : float = 1.0
 
 func reset_game_parameters():
 	nexus_hp = nexus_max_hp

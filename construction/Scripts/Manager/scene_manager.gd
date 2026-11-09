@@ -2,14 +2,12 @@ extends Control
 
 @onready var animation_player = $AnimationPlayer
 
+var next_scene : String
+
 func change_scene(scene : String):
+	AudioManager.transi_sfx.play()
 	animation_player.play("transi")
-	
-	await animation_player.animation_finished
-	
-	get_tree().change_scene_to_file(scene)
-	
-	open_scene()
+	next_scene = scene
 
 func open_scene():
-	animation_player.play_backwards("transi")
+	get_tree().change_scene_to_file(next_scene)

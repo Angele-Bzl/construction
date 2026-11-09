@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnv0bgkllxn22"]
+
+[ext_resource type="FontFile" uid="uid://cqkorgrekwq1g" path="res://Assets/UI/Font/SpaceGrotesk-Bold.ttf" id="1_1xx42"]
+[ext_resource type="Script" uid="uid://ceeycd02wqqe3" path="res://Scripts/ammo_info.gd" id="2_kebhb"]
+
+[node name="AmmoInfo" type="Label" unique_id=871442661]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.12723571, 8.086568e-05, 0.18008587, 1)
+theme_override_fonts/font = ExtResource("1_1xx42")
+text = "+1 Ammo"
+script = ExtResource("2_kebhb")
+
+[node name="Timer" type="Timer" parent="." unique_id=1686821956]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -106,6 +106,7 @@ libraries/ = SubResource("AnimationLibrary_tlobo")
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="BlockDetection" type="Area2D" parent="." unique_id=1880383099]
+collision_mask = 3
 
 [node name="BlockDetectionCollision" type="CollisionShape2D" parent="BlockDetection" unique_id=1666127460]
 z_index = 2

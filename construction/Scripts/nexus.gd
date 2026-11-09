@@ -13,3 +13,5 @@ func take_damage(bullet : Bullet):
 	current_hp -= bullet.damage
 	Defender.nexus_hp = current_hp
 	impact_animation.play("Impact_nexus")
+	block_sprite.modulate = Color(1,0.5 + current_hp/max_hp/2,0.5 + current_hp/max_hp/2)
+	print(block_sprite.modulate)

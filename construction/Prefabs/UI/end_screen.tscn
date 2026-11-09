@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://87270ancc4es" path="res://Assets/UI/Font/CinzelDecorative-Bold.ttf" id="3_real7"]
 [ext_resource type="Theme" uid="uid://cryo43wrhp7pi" path="res://Ressources/Theme/Text_Black.tres" id="4_2amum"]
 [ext_resource type="Texture2D" uid="uid://b2hatc4sh0e3l" path="res://Assets/UI/Line/LineDark.png" id="4_real7"]
+[ext_resource type="FontFile" uid="uid://cqkorgrekwq1g" path="res://Assets/UI/Font/SpaceGrotesk-Bold.ttf" id="7_ki141"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bsgg"]
 bg_color = Color(0.14509805, 0.05490196, 0.13725491, 1)
@@ -107,6 +108,7 @@ texture = ExtResource("4_real7")
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("4_2amum")
+theme_override_fonts/font = ExtResource("7_ki141")
 theme_override_font_sizes/font_size = 30
 text = "Score/Time Left"
 horizontal_alignment = 1

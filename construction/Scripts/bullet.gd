@@ -6,6 +6,8 @@ class_name Bullet
 @export var velocity_loss : float = 0.95
 @export var life_point : int = 20
 
+@export var ammo_info : PackedScene
+
 func _physics_process(delta):
 	var collision_info = move_and_collide((velocity * delta))
 	if collision_info:
@@ -27,8 +29,17 @@ func _physics_process(delta):
 			go_back_to_stock()
 
 func go_back_to_stock():
-	queue_free()
 	Attacker.stock += 1
+	
+	var new_ammo_info = ammo_info.instantiate()
+	get_tree().current_scene.add_child(new_ammo_info)
+	new_ammo_info.global_position = global_position
+	
+	var tween = create_tween()
+	tween.tween_property(self,"scale",Vector2(0.001,0.001),1.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
+	
+	await get_tree().create_timer(1.0)
+	queue_free()
 
 func set_bullet_velocity(angle : Vector2, charge : float):
 	velocity = angle * base_speed * charge

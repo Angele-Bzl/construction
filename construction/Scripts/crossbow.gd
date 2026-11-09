@@ -21,7 +21,7 @@ func _process(delta):
 		if Attacker.stock > 0:
 			charging()
 		else:
-			#son négatif
+			AudioManager.no_ammo_sfx.play()
 			print("Plus assez de munitions !")
 	
 	if charge > 0.0:
@@ -48,10 +48,10 @@ func charging():
 	charge += 0.1
 	if charge > 4:
 		charge = 4
-	
+	#aim_assist_image.size.y = 200.0 * (charge/4)
 	texture_progress_bar.value = charge
 	if charge > 3: 
-		aim_assist_image.size.y = 200.0 * (charge/4)
+		
 		texture_progress_bar.self_modulate = Color("E93C3Cff")
 		
 		anim_canon_trembling.play("Trembling")

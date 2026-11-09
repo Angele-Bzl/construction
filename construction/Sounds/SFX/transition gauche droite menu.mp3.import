@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://47bluimbp4l7"
+path="res://.godot/imported/transition gauche droite menu.mp3-3ce0040c0515a5909759eac11ece39c3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/transition gauche droite menu.mp3"
+dest_files=["res://.godot/imported/transition gauche droite menu.mp3-3ce0040c0515a5909759eac11ece39c3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

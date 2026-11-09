@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dk3fgm84w2nqm"]
+
+[ext_resource type="Texture2D" uid="uid://dowexx6mv8tjc" path="res://Assets/Items/Hole.png" id="1_va2ln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(63, 31)
+
+[node name="Lac" type="StaticBody2D" unique_id=345170551]
+collision_layer = 2
+
+[node name="LacCollision" type="CollisionShape2D" parent="." unique_id=793414021]
+position = Vector2(32.25, 16.25)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="LacSprite" type="Sprite2D" parent="." unique_id=2016900779]
+position = Vector2(32, 16)
+texture = ExtResource("1_va2ln")

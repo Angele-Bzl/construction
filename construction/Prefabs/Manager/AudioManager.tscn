@@ -9,6 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://wt2gofjaengm" path="res://Sounds/SFX/bomb_fuse.wav" id="5_bmuej"]
 [ext_resource type="AudioStream" uid="uid://csrxasrsyu6cu" path="res://Sounds/SFX/cannon.wav" id="6_wy23a"]
 [ext_resource type="AudioStream" uid="uid://bsf1swpapa4xj" path="res://Sounds/SFX/bricks_falling.wav" id="9_in36k"]
+[ext_resource type="AudioStream" uid="uid://bmxjrynwnj5b3" path="res://Sounds/Ambient/ambient_windyfield.wav" id="10_05ilg"]
+[ext_resource type="AudioStream" uid="uid://cro14mmef70q3" path="res://Sounds/SFX/no_ammo.mp3" id="10_f65dr"]
+[ext_resource type="AudioStream" uid="uid://cdek6o8faxb34" path="res://Sounds/SFX/heavy_landing.wav" id="11_v5c67"]
+[ext_resource type="AudioStream" uid="uid://47bluimbp4l7" path="res://Sounds/SFX/transition gauche droite menu.mp3" id="12_ja021"]
 
 [node name="AudioManager" type="Node" unique_id=967250193]
 process_mode = 3
@@ -49,3 +53,22 @@ bus = &"SFX"
 [node name="BlockDestroyedSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1037996305]
 stream = ExtResource("9_in36k")
 bus = &"SFX"
+
+[node name="NoAmmoSFX" type="AudioStreamPlayer" parent="SFX" unique_id=883161638]
+stream = ExtResource("10_f65dr")
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="LandingSFX" type="AudioStreamPlayer" parent="SFX" unique_id=135513945]
+stream = ExtResource("11_v5c67")
+bus = &"SFX"
+
+[node name="TransiSFX" type="AudioStreamPlayer" parent="SFX" unique_id=238419336]
+stream = ExtResource("12_ja021")
+bus = &"SFX"
+
+[node name="Ambient" type="Node" parent="." unique_id=1453967212]
+
+[node name="WindAmbient" type="AudioStreamPlayer" parent="Ambient" unique_id=1193424374]
+stream = ExtResource("10_05ilg")
+bus = &"Ambient"

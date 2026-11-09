@@ -72,6 +72,15 @@ func switch_color_filter(show : bool, color : bool = true):
 	else:
 		filter.modulate = Color(1,0,0)
 
+func land_anim():
+	var tamp_position = global_position
+	var tween = create_tween()
+	tween.set_parallel()
+	tween.tween_property(self,"scale",Vector2(1.0,0.8),0.1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self,"global_position",Vector2(tamp_position.x,tamp_position.y + 20),0.1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self,"scale",Vector2(1.0,1.0),0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(0.1)
+	tween.tween_property(self,"global_position",Vector2(tamp_position.x,tamp_position.y),0.1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(0.1)
+
 func die():
 	switch_collision_activation(false)
 	ruin_sprite.visible = true

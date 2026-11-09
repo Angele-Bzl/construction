@@ -16,6 +16,7 @@ extends Control
 
 func _ready() -> void:
 	AudioManager.fade_in(AudioManager.main_menu_music)
+	AudioManager.fade_in(AudioManager.wind_ambient,1.0,-10.0)
 	credits.visible = false
 	
 	
@@ -43,7 +44,7 @@ func _process(delta):
 
 func _on_start_game_button() -> void:
 	AudioManager.fade_out(AudioManager.main_menu_music)
-	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
+	SceneManager.change_scene("res://Scenes/main_scene.tscn")
 
 func _on_test_level_button_pressed() -> void: 
 	AudioManager.fade_out(AudioManager.main_menu_music)

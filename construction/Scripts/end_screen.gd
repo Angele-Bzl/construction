@@ -8,9 +8,13 @@ func _ready():
 	visible = false
 
 func show_end_label():
-	AudioManager.bomb_fuse_sfx.stop()
+	Input.set_custom_mouse_cursor(null)
+	AudioManager.fade_out(AudioManager.wind_ambient)
 	visible = true
-	get_tree().paused = true
+	global_position.y = -size.y
+	
+	var tween = create_tween()
+	tween.tween_property(self,"global_position",Vector2(0,0),1.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 	
 	match GlobalManager.winner:
 		"Attacker":
@@ -19,6 +23,14 @@ func show_end_label():
 		"Defender":
 			winner_label.text = "Winner : Defender"
 			time_left_score_left.text = "Nexus Hp : " + str(Defender.nexus_hp) + " / " + str(Defender.nexus_max_hp)
+	
+	await tween.finished
+	
+	GlobalManager.hide_hud.emit()
+	
+	get_tree().paused = true
+	AudioManager.bomb_fuse_sfx.stop()
+	
 
 
 func _on_retry_button_pressed():
@@ -26,7 +38,7 @@ func _on_retry_button_pressed():
 	GlobalManager.reset_game_parameters()
 	Attacker.reset_game_parameters()
 	Defender.reset_game_parameters()
-	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
+	SceneManager.change_scene("res://Scenes/main_scene.tscn")
 
 
 func _on_main_menu_button_pressed():
@@ -35,4 +47,4 @@ func _on_main_menu_button_pressed():
 	GlobalManager.reset_game_parameters()
 	Attacker.reset_game_parameters()
 	Defender.reset_game_parameters()
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+	SceneManager.change_scene("res://Scenes/title_screen.tscn")

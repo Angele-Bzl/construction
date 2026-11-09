@@ -8,9 +8,14 @@ var rng = RandomNumberGenerator.new()
 @onready var bomb_fuse_sfx : AudioStreamPlayer = $SFX/BombFuseSFX
 @onready var cannon_sfx : AudioStreamPlayer = $SFX/CannonSFX
 @onready var block_destroyed_sfx : AudioStreamPlayer = $SFX/BlockDestroyedSFX
+@onready var no_ammo_sfx : AudioStreamPlayer = $SFX/NoAmmoSFX
+@onready var landing_sfx : AudioStreamPlayer = $SFX/LandingSFX
+@onready var transi_sfx : AudioStreamPlayer = $SFX/TransiSFX
 
 @onready var game_music : AudioStreamPlayer = $Music/GameMusic
-@onready var main_menu_music = $Music/MainMenuMusic
+@onready var main_menu_music : AudioStreamPlayer = $Music/MainMenuMusic
+
+@onready var wind_ambient : AudioStreamPlayer = $Ambient/WindAmbient
 
 func fade_out(stream_player : AudioStreamPlayer, time : float = 1.5, volume : float = -20.0):
 	if stream_player.playing:
